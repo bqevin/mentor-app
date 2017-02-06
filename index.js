@@ -1,22 +1,15 @@
 var express = require('express');
-var router = express.Router();
 
-router.get('/', function(req, res){
-  res.render('index', {
-    title: 'Home'
-  });
+var app =express();
+
+app.get('/', function(req, res){
+  res.render('Random test');
 });
 
-router.get('/about', function(req, res){
-  res.render('about', {
-    title: 'About'
-  });
-});
+//Declaring the listening port 
+var port = process.env.PORT || '2000';
 
-router.get('/contact', function(req, res){
-  res.render('contact', {
-    title: 'Contact'
-  });
-});
+app.listen(port, function(){
+	console.log('listening on port: '+port);
+})
 
-module.exports = router;

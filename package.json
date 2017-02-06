@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/bqevin/mentor-app/issues"
   },
-  "homepage": "https://github.com/bqevin/mentor-app#readme"
+  "homepage": "https://github.com/bqevin/mentor-app#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "mongoose": "^4.8.1"
+  }
 }

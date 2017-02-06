@@ -1,0 +1,22 @@
+{
+  "name": "mentor001",
+  "version": "1.0.0",
+  "description": "Mentorship management platform",
+  "main": "/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bqevin/mentor-app.git"
+  },
+  "keywords": [
+    "mentorship"
+  ],
+  "author": "Kevin Barasa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bqevin/mentor-app/issues"
+  },
+  "homepage": "https://github.com/bqevin/mentor-app#readme"
+}

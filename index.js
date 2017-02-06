@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res){
-  res.render('Random test');
+  res.render('index');
 });
 
 //Declaring the listening port 

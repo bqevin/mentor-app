@@ -2,7 +2,7 @@
   "name": "mentor001",
   "version": "1.0.0",
   "description": "Mentorship management platform",
-  "main": "/",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

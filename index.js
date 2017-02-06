@@ -1,25 +1,8 @@
 //Require all files
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var cons = require('consolidate');
 var swig = require('swig');
-
-
-//Declaring Database Schema
-// var Schema = mongoose.Schema;
-// var ObjectId = Schema.ObjectId;
-// var User = mongoose.model('User', new Schema(
-// 		{
-// 			id:ObjectId,
-// 			name: String,
-// 			age : Number,
-// 			gender : String
-// 		}
-// ));
-
-//Connecting the mongoose database
-//mongoose.connect('mongodb://localhost/rest_api');
 
 
 //Init app

@@ -11,7 +11,7 @@ We are targeting Kenyan youths who mostly don't have access to quality mentorshi
 
 
 	git pull https://github.com/bqevin/mentor-app.git
-	Don't forget to create a pull request after improving a fork
+	//Don't forget to create a pull request after improving a fork
 
 
 

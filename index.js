@@ -28,7 +28,7 @@ var app =express();
 //ALL CONFIGURATIONS
 // view engine setup
 app.engine('html', cons.swig)
-app.set('views', path.join(__dirname, '/public'));
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'html');
 
 //Have the HTML in the view source

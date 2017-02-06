@@ -25,6 +25,9 @@ var swig = require('swig');
 //Init app
 var app =express();
 
+// DB config files
+var db = require('./config/db');
+
 
 //For caching of content
 var oneDay = 86400000;
@@ -55,4 +58,8 @@ var port = process.env.PORT || '2000';
 app.listen(port, function(){
 	console.log('listening on port: '+port);
 })
+
+
+// expose app           
+exports = module.exports = app;   
 

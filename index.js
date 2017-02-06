@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cons = require('consolidate');
-var path = require('path');
+var swig = require('swig');
 
 
 //Declaring Database Schema
@@ -25,10 +25,15 @@ var path = require('path');
 //Init app
 var app =express();
 
+
+//For caching of content
+var oneDay = 86400000;
+
 //ALL CONFIGURATIONS
 // view engine setup
 app.engine('html', cons.swig)
-app.use(express.static(__dirname + '/public'));
+
+app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
 app.set('view engine', 'html');
 
 //Have the HTML in the view source

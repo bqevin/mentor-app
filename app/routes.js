@@ -23,6 +23,10 @@ var Mentor = require('./models/mentor');
             });
         });
 
+        app.get('/', function(req, res){
+          res.render('index');
+        });
+
         // route to handle creating goes here (app.post)
         // route to handle delete goes here (app.delete)
 

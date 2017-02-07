@@ -1,5 +1,6 @@
 // app/routes.js
 
+var path = require("path");
 // grab the mentor model we just created
 var Mentor = require('./models/mentor');
 
@@ -33,8 +34,7 @@ var Mentor = require('./models/mentor');
         // frontend routes =========================================================
         // route to handle all angular requests
         app.get('*', function(req, res) {
-            res.sendFile("index.html", {"root": __dirname}); // load our public/index.html file
-            //res.sendFile('../public/index.html'); 
+            res.sendFile('index.html', { root: path.join(__dirname, '../public') }); // load our public/index.html file
         });
 
     };

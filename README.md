@@ -9,11 +9,11 @@ We are targeting Kenyan youths who mostly don't have access to quality mentorshi
 
 ## Installation
 
-	* git pull https://github.com/bqevin/mentor-app.git
-	* Install npm modules: npm install
-	* Install bower dependencies bower install
-	* Start up the server: nodemon index.js
-	* View in browser at http://localhost:2000
+1. git pull https://github.com/bqevin/mentor-app.git
+2. Install npm modules: npm install
+3. Install bower dependencies bower install
+4. Start up the server: nodemon index.js
+5. View in browser at http://localhost:2000
 
 
 

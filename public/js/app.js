@@ -1,2 +1,2 @@
 // public/js/app.js
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'MentorCtrl', 'MentorService']);
+angular.module('mentorApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'MentorCtrl', 'MentorService']);

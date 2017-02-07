@@ -35,8 +35,6 @@ app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override')); 
 
 
-
-
 // routes ==================================================
 require('./app/routes')(app); // configure our routes
 
@@ -44,6 +42,7 @@ require('./app/routes')(app); // configure our routes
 
 // start app ===============================================
 // startup our app at http://localhost:2000
+
 //Declaring the listening port 
 var port = process.env.PORT || '2000';
 

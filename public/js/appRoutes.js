@@ -5,13 +5,24 @@
 
         // home page
         .when('/', {
-            templateUrl: '../views/home.html',
+            templateUrl: '../index.html',
             controller: 'MainController'
+        })
+        // Login page
+        .when('/login', {
+            templateUrl: '../views/login.html',
+            controller: 'LoginController'
+        })
+
+        // Register page
+        .when('/register', {
+            templateUrl: '../views/register.html',
+            controller: 'RegisterController'
         })
 
         // mentors page that will use the MentorController
         .when('/mentors', {
-            templateUrl: 'views/nerd.html',
+            templateUrl: '../views/mentors.html',
             controller: 'MentorController'
         });
 

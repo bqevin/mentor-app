@@ -23,9 +23,9 @@ var Mentor = require('./models/mentor');
             });
         });
 
-        app.get('/', function(req, res){
-          res.render('index');
-        });
+        // app.get('/', function(req, res){
+        //   res.render('index');
+        // });
 
         // route to handle creating goes here (app.post)
         // route to handle delete goes here (app.delete)
@@ -33,7 +33,8 @@ var Mentor = require('./models/mentor');
         // frontend routes =========================================================
         // route to handle all angular requests
         app.get('*', function(req, res) {
-            res.sendfile('./public/index.html'); // load our public/index.html file
+            res.sendFile("index.html", {"root": __dirname}); // load our public/index.html file
+            //res.sendFile('../public/index.html'); 
         });
 
     };

@@ -298,10 +298,10 @@
    width: 100%;
    /*height: 100%;*/
    position: absolute;
-   top: 0;
+   top: -8%;
    left: 0;
    overflow: inherit;
-   border-radius: 10px;
+   /*border-radius: 50px;*/
    padding: 60px 50px 40px 50px;
 }
 
@@ -396,18 +396,17 @@
    -ms-transform: translate(50%, -50%) rotate(0deg);
 }
 
-/*body {
-   background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
+body {
+   background-image: url(https://images.unsplash.com/photo-1475234561019-11e030717c51?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=);
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
    min-height: 100vh;
    font-family: 'Roboto', sans-serif;
-}*/
+}
 
 body,
 html {
-   background-color: #2196F3 !important;
 }
 
 .materialContainer {
@@ -434,13 +433,22 @@ html {
    list-style-type: none;
    outline: none;
 }
-    </style>
+.my-container{
+   width: 100%;
+   height: 100%;
+   background-color: #0803E499 !important;
+   position: absolute;
+   z-index: 2;
+}
+</style>
 </head>
 <body>
+<!-- <img class="home-bg" src="../img/mentorshipsliderthree.png"> -->
 <header>
     
 </header>
 <!--Form with header-->
+<div class="my-container">
 <div class="materialContainer container">
 
 
@@ -510,6 +518,7 @@ html {
 
    </div>
 
+</div>
 </div>
 <!--/Form with header-->
 

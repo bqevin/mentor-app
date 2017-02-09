@@ -18,84 +18,47 @@
     <!-- Material Design Bootstrap -->
     <link href="./css/mdb.min.css" rel="stylesheet">
 
+    <!-- Custom CSS-->
+    <link href="../css/style.css" rel="stylesheet">
+
     <!-- Template styles -->
     <style rel="stylesheet">
         /* TEMPLATE STYLES */
         /* Necessary for full page carousel*/
-        
-        html,
-        body {
-            height: 100%;
-        }
-        /* Navigation*/
-        
-        .navbar {
-            background-color: transparent;
-        }
-        
-        .top-nav-collapse {
-            background-color: #4285F4;
-        }
-        
-        footer.page-footer {
-            background-color: #4285F4;
-        }
-        
-        @media only screen and (max-width: 768px) {
-            .navbar {
-                background-color: #4285F4;
-            }
-        }
-        /* Carousel*/
-        
-        .carousel {
-            height: 50%;
-        }
-        
-        @media (max-width: 776px) {
-            .carousel {
-                height: 100%;
-            }
-        }
-        
-        .carousel-item,
-        .active {
-            height: 100%;
-        }
-        
-        .carousel-inner {
-            height: 100%;
-        }
-        
         .carousel-item:nth-child(1) {
             background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg");
             background-repeat: no-repeat;
             background-size: cover;
             opacity: 0.4;
+            height: 500px;
         }
-        
+
         .carousel-item:nth-child(2) {
             background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            height: 500px;
         }
-        
+
         .carousel-item:nth-child(3) {
             background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(67).jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            height: 500px;
         }
-        /*Caption*/
-        
-        .flex-center {
-            color: #fff;
+        .navbar {
+            background: rgba(0, 0, 0, 0.4) !important;
         }
+
+        .navbar-brand{
+            font-weight: bolder;
+        }
+
     </style>
 
 </head>
 
 <body ng-app="mentorApp">
-
 
     <!--Navbar-->
     <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
@@ -113,17 +76,15 @@
                 <a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Mentor 001</a>
                 <!--Links-->
                 <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How it Works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Mentor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">Resources</a>
                     </li>
                 </ul>
                 <!--Search form-->
@@ -157,13 +118,13 @@
                 <div class="flex-center animated fadeInDown">
                     <ul>
                         <li>
-                            <h1 class="h1-responsive">Material Design for Bootstrap 4</h1></li>
+                            <h1 class="h1-responsive">Mentor 001</h1></li>
                         <li>
-                            <p>The most powerful and free UI KIT for the newest Bootstrap</p>
+                            <p>Mentoring Platform for You</p>
                         </li>
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg">Sign up!</a>
-                            <a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg">Learn more</a>
+                            <a target="_blank" href="#" class="btn btn-primary btn-lg">Sign up!</a>
+                            <a target="_blank" href="#" class="btn btn-default btn-lg">Learn more</a>
                         </li>
                     </ul>
                 </div>
@@ -177,13 +138,15 @@
                 <div class="flex-center animated fadeInDown">
                     <ul>
                         <li>
-                            <h1 class="h1-responsive">Lots of tutorials at your disposal</h1>
+                            <h1 class="h1-responsive">Mentoring and Support</h1>
                         </li>
                         <li>
                             <p>And all of them are FREE!</p>
                         </li>
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-primary btn-lg">Start learning</a>
+                            <a target="_blank" href="#" class="btn btn-primary btn-lg">Sign up!</a>
+                            <a target="_blank" href="#" class="btn btn-default btn-lg">Learn more</a>
+                        
                         </li>
                     </ul>
                 </div>
@@ -202,7 +165,8 @@
                             <p>Our community can help you with any question</p>
                         </li>
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg">Support forum</a>
+                            <a target="_blank" href="#" class="btn btn-primary btn-lg">Sign up!</a>
+                            <a target="_blank" href="#" class="btn btn-default btn-lg">Learn more</a>
                         </li>
                     </ul>
                 </div>

@@ -44,8 +44,14 @@ module.exports = function(app, passport) {
         res.render('views/register.ejs', { message: req.flash('loginMessage') }); 
     });
 
-    // process the login form
-    // app.post('/login', do all our passport stuff here);
+     // process the login form
+    app.post('/getin', passport.authenticate('local-login', {
+        successRedirect : '/profile', // redirect to the secure profile section
+        failureRedirect : '/login', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+    }));
+
+
 
     // =====================================
     // SIGNUP ==============================

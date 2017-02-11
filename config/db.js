@@ -1,4 +1,4 @@
 // config/db.js
     module.exports = {
-        url : 'mongodb://localhost/mentor'
+        'url' : 'mongodb://localhost/mentor'
     }

@@ -449,9 +449,14 @@ html {
 </header>
 <!--Form with header-->
 <div class="my-container">
+<!-- show any messages that come back with authentication -->
+<% if (message.length > 0) { %>
+<h1 style="text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: #fff; "><%= message %></h1>
+<% } %>
 <div class="materialContainer container">
 
-
+   <!--Login Form starts here-->
+   <form action="/login" method="post">
    <div class="box">
 
       <div class="title">LOGIN</div>
@@ -475,7 +480,10 @@ html {
       <a href="" class="pass-forgot">Forgot your password?</a>
 
    </div>
+   </form>
 
+   <!--Registration Form starts here-->
+   <form action="/register" method="post">
    <div class="overbox">
       <div class="material-button alt-2"><span class="shape"></span></div>
 
@@ -517,6 +525,7 @@ html {
 
 
    </div>
+   </form>
 
 </div>
 </div>

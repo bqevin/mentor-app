@@ -6,6 +6,7 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var flash    = require('connect-flash');
 var morgan       = require('morgan');
+var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 
@@ -15,7 +16,14 @@ var app =express();
 
 // DB config files
 var db = require('./config/db');
+// configuration ===============================================================
+mongoose.connect(db.url); // connect to our database
 
+
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser()); // get information from html forms
 
 //For caching of content
 var oneDay = 86400000;

@@ -3,12 +3,14 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var path = require("path");
-var passport = require('passport');
+var passport = require('passport'); 
+require('./config/passport')(passport); // pass passport for configuration
 var flash    = require('connect-flash');
 var morgan       = require('morgan');
 var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
+
 
 
 //Init app

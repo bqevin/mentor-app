@@ -2,7 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
+var path = require("path");
 var passport = require('passport');
 var flash    = require('connect-flash');
 var morgan       = require('morgan');
@@ -30,12 +30,14 @@ var oneDay = 86400000;
 
 //ALL CONFIGURATIONS
 // view engine setup
-//app.engine('html', cons.swig)
-
+app.set('views', path.join(__dirname, '/public'));
+app.set('view engine', 'ejs');
+//Serve the static files
 app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
 
-//Set  view engine
-app.set('view engine', 'ejs');
+
+
+
 
 //app.set('view engine', 'html');
 

@@ -1,230 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <title>Mentor001</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Material Design Bootstrap -->
-    <link href="../css/mdb.min.css" rel="stylesheet">
-
-    <script type="text/javascript" src="../js/jquery-2.2.3.js" ></script>
-
-    <!-- Template styles -->
-    <style type="text/css">
-    
-</style>
+   <title>My first program</title>
 </head>
 <body>
-<!-- <img class="home-bg" src="../img/mentorshipsliderthree.png"> -->
-<header>
-    
-</header>
-<!--Form with header-->
-<div class="my-container">
-<div class="materialContainer container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head profile="http://gmpg.org/xfn/11">
+      
+<title>Mentor001 | Log In & Sign Up</title>
 
+<link rel="stylesheet" href="style.css" type="text/css" media="all">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" type="text/css" media="all">
 
-   <div class="box">
+<link href='http://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
 
-      <div class="title">LOGIN</div>
-
-      <div class="input">
-         <label for="name">Username</label>
-         <input type="text" name="name" id="name">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="pass">Password</label>
-         <input type="password" name="pass" id="pass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="button login">
-         <button><span>GO</span> <i class="fa fa-check"></i></button>
-      </div>
-
-      <a href="" class="pass-forgot">Forgot your password?</a>
-
-   </div>
-
-   <div class="overbox">
-      <div class="material-button alt-2"><span class="shape"></span></div>
-
-      <div class="title">REGISTER</div>
-
-      <div class="input">
-         <label for="username">Username</label>
-         <input type="text" name="username" id="username">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="regname">Email</label>
-         <input type="text" name="regname" id="regname">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="dob">DOB</label>
-         <input type="text" name="dob" id="dob">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="regpass">Password</label>
-         <input type="password" name="regpass" id="regpass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="reregpass">Confirm Password</label>
-         <input type="password" name="reregpass" id="reregpass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="button">
-         <button><span>NEXT</span></button>
-      </div>
-
-
-   </div>
-
-</div>
-</div>
-<!--/Form with header-->
-
-<script type="text/javascript">
-    $(function() {
-
-   $(".input input").focus(function() {
-
-      $(this).parent(".input").each(function() {
-         $("label", this).css({
-            "line-height": "18px",
-            "font-size": "18px",
-            "font-weight": "100",
-            "top": "0px"
-         })
-         $(".spin", this).css({
-            "width": "100%"
-         })
-      });
-   }).blur(function() {
-      $(".spin").css({
-         "width": "0px"
-      })
-      if ($(this).val() == "") {
-         $(this).parent(".input").each(function() {
-            $("label", this).css({
-               "line-height": "40px",
-               "font-size": "16px",
-               "font-weight": "300",
-               "top": "10px"
-            })
-         });
-
-      }
-   });
-
-   $(".button").click(function(e) {
-      var pX = e.pageX,
-         pY = e.pageY,
-         oX = parseInt($(this).offset().left),
-         oY = parseInt($(this).offset().top);
-
-      $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' + (pY - oY) + 'px;"></span>')
-      $('.x-' + oX + '.y-' + oY + '').animate({
-         "width": "500px",
-         "height": "500px",
-         "top": "-250px",
-         "left": "-250px",
-
-      }, 600);
-      $("button", this).addClass('active');
-   })
-
-   $(".alt-2").click(function() {
-      if (!$(this).hasClass('material-button')) {
-         $(".shape").css({
-            "width": "100%",
-            "height": "100%",
-            "transform": "rotate(0deg)"
-         })
-
-         setTimeout(function() {
-            $(".overbox").css({
-               "overflow": "initial"
-            })
-         }, 600)
-
-         $(this).animate({
-            "width": "70px",
-            "height": "70px"
-         }, 500, function() {
-            $(".box").removeClass("back");
-
-            $(this).removeClass('active')
-         });
-
-         $(".overbox .title").fadeOut(300);
-         $(".overbox .input").fadeOut(300);
-         $(".overbox .button").fadeOut(300);
-
-         $(".alt-2").addClass('material-buton');
-      }
-
-   })
-
-   $(".material-button").click(function() {
-
-      if ($(this).hasClass('material-button')) {
-         setTimeout(function() {
-            $(".overbox").css({
-               "overflow": "hidden"
-            })
-            $(".box").addClass("back");
-         }, 200)
-         $(this).addClass('active').animate({
-            "width": "700px",
-            "height": "550px"
-         });
-
-         setTimeout(function() {
-            $(".shape").css({
-               "width": "50%",
-               "height": "50%",
-               "transform": "rotate(45deg)"
-            })
-
-            $(".overbox .title").fadeIn(300);
-            $(".overbox .input").fadeIn(300);
-            $(".overbox .button").fadeIn(300);
-         }, 700)
-
-         $(this).removeClass('material-button');
-
-      }
-
-      if ($(".alt-2").hasClass('material-buton')) {
-         $(".alt-2").removeClass('material-buton');
-         $(".alt-2").addClass('material-button');
-      }
-
-   });
-
-});
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+$('.form-control').on('focus blur', function (e) {
+    $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+}).trigger('blur');
+});//]]>  
 </script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+</head>  
+<body style="height: 100%; overflow: hidden; width: 100% !important;">
+
+<div id="fback"><div class="girisback"></div><div class="kayitback"></div></div>
+        
+      <div id="textbox">
+         <div class="toplam">
+                
+            <div class="left">
+                <div id="ic">
+               <h2>Sign Up</h2>
+                  <form id="girisyap" name="signup_form" id="signup_form" method="post" enctype="multipart/form-data" onsubmit="return false;">
+
+               <div class="yarim form-group">
+                       <label class="control-label" for="inputNormal">Username</label>
+                       <input type="text" name="signup_username" id="signup_username" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+               </div>
+               <div class="yarim sn form-group">
+                       <label class="control-label" for="inputNormal">Full Name</label>
+                       <input type="text" name="field_1" id="field_1" value="" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <div class="form-group">
+                       <label class="control-label" for="inputNormal">Email</label>
+                       <input type="text" name="signup_email" id="signup_email" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <div class="form-group">
+                       <label class="control-label" for="inputNormal">Password</label>
+                       <input type="password" name="signup_password" id="signup_password" value="" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+               </div>
+               <div class="form-group soninpt">
+                     <label class="control-label" for="inputNormal">Confirm Password</label>
+                     <input type="password" name="signup_password_2" id="field_2" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <input type="submit" name="signup_submit" id="signup_submit" value="Sign Up" class="girisbtn"  />
+               </form>
+
+                <button id="moveright">Log In</button>
+            </div>
+            </div>
+
+            <div class="right">
+            <div id="ic">
+               <h2>Login</h2>
+               
+               <form name="login-form" id="girisyap" id="sidebar-user-login" method="post" onsubmit="return false;">
+
+               <div class="form-group">
+                       <label class="control-label" for="inputNormal">Username</label>
+                          <input type="text" name="log" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+               </div>
+               <div class="form-group soninpt">
+                       <label class="control-label" for="inputNormal">Password</label>
+                          <input type="password" name="pwd" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <input type="submit" value="Login" class="girisbtn" tabindex="100" />
+               </form>
+
+               <button id="moveleft">Sign Up</button>
+                </div>
+            </div>
+
+         </div>
+      </div>
+
+      <script type="text/javascript" >
+      $(document).ready(function() {
+
+    $('#moveleft').click(function() {
+        $('#textbox').animate({
+        'marginLeft' : "0" //moves left
+        });
+        
+        $('.toplam').animate({
+        'marginLeft' : "100%" //moves right
+        });
+    });
+    
+    $('#moveright').click(function() {
+        $('#textbox').animate({
+        'marginLeft' : "50%" //moves right
+        });
+        
+        $('.toplam').animate({
+        'marginLeft' : "0" //moves right
+        });
+    });
+    
+});
+
+      </script>
+
+   </body>
+</html>
 </body>
 </html>

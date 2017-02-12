@@ -2,12 +2,12 @@
 
 //var path = require("path");
 // grab the mentor model we just created
-//var Mentor = require('./models/mentor');
+var Mentor = require('./models/mentor');
 
 
 module.exports = function(app, passport) {
 
-            // sample api route
+    // sample api route
     app.get('/api/mentors', function(req, res) {
         // use mongoose to get all mentors in the database
         Mentor.find(function(err, mentors) {
@@ -20,12 +20,18 @@ module.exports = function(app, passport) {
             res.json(mentors); // return all mentors in JSON format
         });
     });
-    // frontend routes =========================================================
-    // route to handle all angular requests
-    // app.get('*', function(req, res) {
-    //     res.sendFile('index.html', { root: path.join(__dirname, '../public') }); // load our public/index.html file
-    // });
 
+    //Delete all users
+    app.get('/api/danger', function(req, res) {
+        // use mongoose to get all mentors in the database
+        Mentor.remove(function(err) {
+           if (err)
+                res.send(err);
+            res.redirect('/api/mentors');
+        });
+        
+    });
+    
 
     // =====================================
     // HOME PAGE (with login links) ========

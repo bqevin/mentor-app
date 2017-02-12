@@ -72,7 +72,7 @@ module.exports = function(passport) {
                 newMentor.local.email    = email;
                 newMentor.local.password = newMentor.generateHash(password);
                 newMentor.local.dob = req.body.dob;
-                newMentor.local.username = req.body.username;
+                newMentor.local.name = req.body.name;
 
 
                 // save the mentor
@@ -165,7 +165,7 @@ module.exports = function(passport) {
                     newMentor.facebook.id    = profile.id; // set the users facebook id                   
                     newMentor.facebook.token = token; // we will save the token that facebook provides to the user                    
                     newMentor.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
-                    newMentor.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+                    newMentor.facebook.email = profile.email; // facebook can return multiple emails so we'll take the first
 
                     // save our user to the database
                     newMentor.save(function(err) {

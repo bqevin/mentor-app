@@ -11,7 +11,7 @@ var bcrypt   = require('bcrypt-nodejs');
 var mentorSchema = mongoose.Schema({
 
     local            : {
-    	username 	 : String,
+    	name 	 : String,
         email        : String,
         password     : String,
         dob			 : Date

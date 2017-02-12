@@ -79,7 +79,7 @@ module.exports = function(app, passport) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
+        res.render('views/profile.ejs', {
             mentor : req.mentor // get the mentor out of session and pass to template
         });
     });

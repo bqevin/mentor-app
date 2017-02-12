@@ -41,18 +41,22 @@ $('.form-control').on('focus blur', function (e) {
                <h2>Sign Up</h2>
                   <form id="girisyap" name="signup_form" id="signup_form" method="post" enctype="multipart/form-data" onsubmit="return false;">
 
-               <div class="yarim form-group">
-                       <label class="control-label" for="inputNormal">Username</label>
-                       <input type="text" name="signup_username" id="signup_username" class="bp-suggestions form-control" cols="50" rows="10" ></input>
-               </div>
-               <div class="yarim sn form-group">
+               <div class="sn form-group">
                        <label class="control-label" for="inputNormal">Full Name</label>
-                       <input type="text" name="field_1" id="field_1" value="" class="bp-suggestions form-control" cols="50" rows="10"></input>
+                       <input type="text" name="fname" id="field_1" class="bp-suggestions form-control" cols="50" rows="10"></input>
                </div>
                <div class="form-group">
                        <label class="control-label" for="inputNormal">Email</label>
                        <input type="text" name="signup_email" id="signup_email" class="bp-suggestions form-control" cols="50" rows="10"></input>
                </div>
+
+
+               <div class="yarim form-group">
+                       <label class="control-label" for="inputNormal">Date of Birth</label>
+                       <input type="date" name="dob" id="date" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+               </div>
+
+
                <div class="form-group">
                        <label class="control-label" for="inputNormal">Password</label>
                        <input type="password" name="signup_password" id="signup_password" value="" class="bp-suggestions form-control" cols="50" rows="10" ></input>
@@ -75,12 +79,12 @@ $('.form-control').on('focus blur', function (e) {
                <form name="login-form" id="girisyap" id="sidebar-user-login" method="post" onsubmit="return false;">
 
                <div class="form-group">
-                       <label class="control-label" for="inputNormal">Username</label>
-                          <input type="text" name="log" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+                       <label class="control-label" for="inputNormal">Email</label>
+                          <input type="text" name="email" class="bp-suggestions form-control" cols="50" rows="10" ></input>
                </div>
                <div class="form-group soninpt">
                        <label class="control-label" for="inputNormal">Password</label>
-                          <input type="password" name="pwd" class="bp-suggestions form-control" cols="50" rows="10"></input>
+                          <input type="password" name="password" class="bp-suggestions form-control" cols="50" rows="10"></input>
                </div>
                <input type="submit" value="Login" class="girisbtn" tabindex="100" />
                </form>

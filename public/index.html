@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mentorApp">
 
 <head>
 
@@ -10,13 +10,17 @@
     <title>Mentor001</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="./css/mdb.min.css" rel="stylesheet">
+    <link href="./css/mdb.css" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Custom CSS-->
     <link href="../css/style.css" rel="stylesheet">
@@ -25,6 +29,81 @@
     <style rel="stylesheet">
         /* TEMPLATE STYLES */
         /* Necessary for full page carousel*/
+<<<<<<< HEAD
+=======
+        
+        html,
+        body {
+            height: 100%;
+        }
+        /* Navigation*/
+        
+        .navbar {
+            background-color: white;
+        }
+
+        .nav-tem {
+            color: #1d95d2;
+        }
+        
+        .top-nav-collapse {
+            background-color: #eee;
+        }
+        
+        footer.page-footer {
+            text-decoration: #f99d25;
+            background-color: #eee;
+            z-index: 1030;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: white;
+            }
+        }
+
+        @media only screen and (max-width: 479px) {
+            .cta-btn {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 479px) {
+            .logo {
+                width: 80px;
+            }
+        }
+
+        @media only screen and (min-width: 479px) {
+           .cta-icons  {
+            display: none;
+            visibility: hidden;
+           }
+        }
+
+        
+        /* Carousel*/
+        
+        .carousel {
+            height: 80%;
+        }
+        
+        @media (max-width: 776px) {
+            .carousel {
+                height: 100%;
+            }
+        }
+        
+        .carousel-item,
+        .active {
+            height: 100%;
+        }
+        
+        .carousel-inner {
+            height: 100%;
+        }
+        
+>>>>>>> e74f358425ad9641ff0071fd5765c2e76dc96c65
         .carousel-item:nth-child(1) {
             background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg");
             background-repeat: no-repeat;
@@ -55,10 +134,11 @@
         }
 
     </style>
+<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
 
 </head>
 
-<body ng-app="mentorApp">
+<body ng-controller="MainController">
 
     <!--Navbar-->
     <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
@@ -71,11 +151,28 @@
         <div class="container">
 
             <!--Collapse content-->
-            <div class="collapse navbar-toggleable-xs" id="collapseEx">
+            <div >
                 <!--Navbar Brand-->
-                <a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Mentor 001</a>
-                <!--Links-->
+                <a class="logo navbar-brand" href="./" target=""><img src="img/logo.png" width="85px"></a>
+                <div class="cta-btn" style="float: right;">
+                    <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg waves-effect waves-light" style="background-color: #a43795;">Connect With Mentor</a>
+                    <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg waves-effect waves-light" style="background-color: #f99d25;">Connect With Mentee</a>
+                </div>
+                <div class="cta-icons" style="float: right;display: flex;padding-top: 15px;color: #f99d25;">
+                    <center><a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class=""><i class="fa fa-user-circle fa-2x"></i><br>MENTOR</a></center>
+                    <center style="margin-left: 15px;"><a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="" ><i class="fa fa-user-circle-o fa-2x"></i><br>MENTEE</a></center>
+                </div>
+                
+            </div>
+            <!--/.Collapse content-->
+
+        </div>
+        <div class="container">
+
+            <!--Collapse content-->
+            <div class="collapse navbar-toggleable-xs" id="collapseEx">
                 <ul class="nav navbar-nav">
+<<<<<<< HEAD
                    
                     <li class="nav-item">
                         <a class="nav-link" href="#">How it Works</a>
@@ -85,6 +182,19 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Resources</a>
+=======
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MENTORS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TESTIMONIALS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+>>>>>>> e74f358425ad9641ff0071fd5765c2e76dc96c65
                     </li>
                 </ul>
                 <!--Search form-->
@@ -191,9 +301,20 @@
 
     <br>
 
-    <!--Content-->
     <div class="container">
-        <div class="row">
+        <center>
+        <h1>Seek out mentorship</h1>
+        <p>As the leader of a growing company, one thing that has always amazed me is the lack of enthusiasm that young employees tend to have about the concept of mentorship. I’m not sure if it’s simply a Millennial trait or something else, but I’ve never once had a team member actively seek out formal mentorship from senior members of the team.</p>
+        <a target="_blank" href="http://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-primary btn-lg">Find A Mentor</a>
+        </center>
+        <br>
+    </div>
+
+    <!--Content-->
+    <div class="container" style="border: 2px #1d95d2 solid;border-radius: 5px;">
+    <br><center>
+    <h3>MENTORS</h3></center>
+        <div class="row" >
             <!--First columnn-->
             <div class="col-lg-4">
                 <!--Card-->
@@ -210,11 +331,22 @@
 
                     <!--Card content-->
                     <div class="card-block">
+                    <div class="card__share">
+                        <div class="card__social">  
+                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-instagram"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-linkedin"></span></a>
+                            <a class="share-icon website" href="#"><span class="fa fa-globe"></span></a> 
+                        </div>
+                        <a id="share" class="share-toggle share-icon" href="#"></a>
+                    </div>
                         <!--Title-->
-                        <h4 class="card-title">Card title</h4>
+                        <h4 class="card-title">Mentor 001</h4>
                         <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
+                        <p class="card-text">Some quick bio text for our mentors, 50 or so words.</p>
+                        <a href="#" class="btn btn-primary">View Profile</a>
                     </div>
                     <!--/.Card content-->
 
@@ -290,82 +422,28 @@
     <footer class="page-footer center-on-small-only">
 
         <!--Footer Links-->
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div class="row">
 
-                <!--First column-->
-                <div class="col-lg-3 offset-lg-1 hidden-lg-down">
-                    <h5 class="title">ABOUT MATERIAL DESIGN</h5>
-                    <p>Material Design (codenamed Quantum Paper) is a design language developed by Google. </p>
-
-                    <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS, and JS framework - Bootstrap.</p>
-                </div>
-                <!--/.First column-->
-
-                <hr class="hidden-md-up">
-
-                <!--Second column-->
-                <div class="col-lg-2 col-md-4 offset-lg-1">
-                    <h5 class="title">First column</h5>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <!--/.Second column-->
-
-                <hr class="hidden-md-up">
-
-                <!--Third column-->
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="title">Second column</h5>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <!--/.Third column-->
-
-                <hr class="hidden-md-up">
-
-                <!--Fourth column-->
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="title">Third column</h5>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <!--/.Fourth column-->
-
+               
             </div>
-        </div>
+        </div> -->
         <!--/.Footer Links-->
 
-        <hr>
+        <!-- <hr> -->
 
         <!--Call to action-->
         <div class="call-to-action">
-            <h4>Material Design for Bootstrap</h4>
-            <ul>
-                <li>
-                    <h5>Get our UI KIT for free</h5></li>
-                <li><a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-danger">Sign up!</a></li>
-                <li><a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default">Learn more</a></li>
-            </ul>
+            <form>
+                <label>Subscribe</label><input type="text" name="email">
+            </form>
         </div>
         <!--/.Call to action-->
 
         <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2015 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>
+                © 2017<a href="http://www.MDBootstrap.com"> Mentor 001 </a>
 
             </div>
         </div>
@@ -378,7 +456,17 @@
     <!-- SCRIPTS -->
 
     <!-- JQuery -->
-    <script type="text/javascript" src="./js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function($) {
+
+    $('.card__share > a').on('click', function(e){ 
+        e.preventDefault() // prevent default action - hash doesn't appear in url
+        $(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
+        $(this).toggleClass('share-expanded');
+    });
+  
+});
+    </script>
 
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="./js/tether.min.js"></script>

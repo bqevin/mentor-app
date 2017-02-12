@@ -7834,16 +7834,17 @@ i.btn-danger {
 }
 
 .navbar .navbar-toggler {
-  float: right;
+  float: left;
+  padding-top: 20px;
 }
 
 .navbar .navbar-toggler:focus {
-  background-color: inherit;
+  background-color: #a43795;
 }
 
 .navbar .breadcrumb {
   margin: 0;
-  background-color: inherit;
+  background-color: #a43795;
 }
 
 .navbar .nav-flex-icons {
@@ -7859,7 +7860,7 @@ i.btn-danger {
 
 .navbar.navbar-dark .breadcrumb a,
 .navbar.navbar-dark .navbar-nav .nav-item a {
-  color: #fff;
+  color: #1d95d2;
   transition: .35s;
 }
 
@@ -7881,11 +7882,11 @@ i.btn-danger {
 }
 
 .navbar.navbar-dark .navbar-toggler {
-  color: #fff;
+  color: #1d95d2;
 }
 
 .navbar.navbar-dark .nav-link {
-  color: #fff;
+  color: #1d95d2;
 }
 
 .navbar.navbar-light .breadcrumb a,
@@ -7954,7 +7955,7 @@ i.btn-danger {
 }
 
 .navbar-dark form ::-webkit-input-placeholder {
-  color: #fff !important;
+  color: #a43795 !important;
   font-weight: 300;
 }
 
@@ -7976,11 +7977,11 @@ i.btn-danger {
 }
 
 .navbar-dark form input[type=text] {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ee2d32;
 }
 
 .navbar-dark form .form-control {
-  color: #fff;
+  color: #1d95d2;
 }
 
 .navbar-light form ::-webkit-input-placeholder {

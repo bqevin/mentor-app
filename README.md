@@ -17,7 +17,10 @@ We are targeting Kenyan youths who mostly don't have access to quality mentorshi
 
 
 
-
 ## Contribute
 
-To join the team, mail me through **kevin.barasa001@gmail.com** with what skills or features you wanna improve. Remind me to create our twitter handle.
+To join the Trello Board, drop me an mail at **kevin.barasa001@gmail.com** 
+
+
+## Licence
+MIT

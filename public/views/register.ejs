@@ -1,656 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <title>Mentor001</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Material Design Bootstrap -->
-    <link href="../css/mdb.min.css" rel="stylesheet">
-
-    <script type="text/javascript" src="../js/jquery-2.2.3.js" ></script>
-
-    <!-- Template styles -->
-    <style type="text/css">
-    .background{
-        height: 100%;
-    }
-    .container{
-        position: absolute;
-        right: 50px;
-        top: 10px;
-    }
-    .box {
-   position: relative;
-   top: 0;
-   opacity: 1;
-   float: left;
-   padding: 60px 50px 40px 50px;
-   width: 100%;
-   background: #fff;
-   border-radius: 10px;
-   transform: scale(1);
-   -webkit-transform: scale(1);
-   -ms-transform: scale(1);
-   z-index: 5;
-}
-
-.box.back {
-   transform: scale(.95);
-   -webkit-transform: scale(.95);
-   -ms-transform: scale(.95);
-   top: -20px;
-   opacity: .8;
-   z-index: -1;
-}
-
-.box:before {
-   content: "";
-   width: 100%;
-   height: 30px;
-   border-radius: 10px;
-   position: absolute;
-   top: -10px;
-   background: rgba(255, 255, 255, .6);
-   left: 0;
-   transform: scale(.95);
-   -webkit-transform: scale(.95);
-   -ms-transform: scale(.95);
-   z-index: -1;
-}
-
-.overbox .title {
-   color: #fff;
-}
-
-.overbox .title:before {
-   background: #fff;
-}
-
-.title {
-   width: 100%;
-   float: left;
-   line-height: 46px;
-   font-size: 34px;
-   font-weight: 700;
-   letter-spacing: 2px;
-   color: #00E6FE;
-   position: relative;
-}
-
-.title:before {
-   content: "";
-   width: 5px;
-   height: 100%;
-   position: absolute;
-   top: 0;
-   left: -50px;
-   background: #00E6FE;
-}
-
-.input,
-.input label,
-.input input,
-.input .spin,
-.button,
-.button button .button.login button i.fa,
-.material-button .shape:before,
-.material-button .shape:after,
-.button.login button {
-   transition: 300ms cubic-bezier(.4, 0, .2, 1);
-   -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
-   -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
-}
-
-.material-button,
-.alt-2,
-.material-button .shape,
-.alt-2 .shape,
-.box {
-   transition: 400ms cubic-bezier(.4, 0, .2, 1);
-   -webkit-transition: 400ms cubic-bezier(.4, 0, .2, 1);
-   -ms-transition: 400ms cubic-bezier(.4, 0, .2, 1);
-}
-
-.input,
-.input label,
-.input input,
-.input .spin,
-.button,
-.button button {
-   width: 100%;
-   float: left;
-}
-
-.input,
-.button {
-   margin-top: 20px;
-   height: 50px;
-}
-
-.input,
-.input input,
-.button,
-.button button {
-   position: relative;
-}
-
-.input input {
-   height: 40px;
-   top: 5px;
-   border: none;
-   background: transparent;
-}
-
-.input input,
-.input label,
-.button button {
-   font-family: 'Roboto', sans-serif;
-   font-size: 16px;
-   color: rgba(0, 0, 0, 0.8);
-   /*font-weight: 300;*/
-}
-
-.input:before,
-.input .spin {
-   width: 100%;
-   height: 1px;
-   position: absolute;
-   bottom: 0;
-   left: 0;
-}
-
-.input:before {
-   content: "";
-   background: rgba(0, 0, 0, 0.1);
-   z-index: 3;
-}
-
-.input .spin {
-   background: #00E6FE;
-   z-index: 4;
-   width: 0;
-}
-
-.overbox .input .spin {
-   background: rgba(255, 255, 255, 1);
-}
-
-.overbox .input:before {
-   background: rgba(255, 255, 255, 0.5);
-}
-
-.input label {
-   position: absolute;
-   top: 10px;
-   left: 0;
-   z-index: 2;
-   cursor: pointer;
-   line-height: 60px;
-}
-
-.button.login {
-   width: 60%;
-   left: 20%;
-}
-
-.button.login button,
-.button button {
-   width: 100%;
-   line-height: 40px;
-   left: 0%;
-   background-color: transparent;
-   border: 3px solid rgba(0, 0, 0, 0.1);
-   font-weight: 900;
-   font-size: 18px;
-   color: rgba(0, 0, 0, 0.2);
-}
-
-.button.login {
-   margin-top: 30px;
-}
-
-.button {
-   margin-top: 20px;
-}
-
-.button button {
-   background-color: #fff;
-   color: #00E6FE;
-   border: none;
-}
-
-.button.login button.active {
-   border: 3px solid transparent;
-   color: #fff !important;
-}
-
-.button.login button.active span {
-   opacity: 0;
-   transform: scale(0);
-   -webkit-transform: scale(0);
-   -ms-transform: scale(0);
-}
-
-.button.login button.active i.fa {
-   opacity: 1;
-   transform: scale(1) rotate(-0deg);
-   -webkit-transform: scale(1) rotate(-0deg);
-   -ms-transform: scale(1) rotate(-0deg);
-}
-
-.button.login button i.fa {
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   top: 0;
-   left: 0;
-   line-height: 60px;
-   transform: scale(0) rotate(-45deg);
-   -webkit-transform: scale(0) rotate(-45deg);
-   -ms-transform: scale(0) rotate(-45deg);
-}
-
-.button.login button:hover {
-   color: #00E6FE;
-   border-color: #00E6FE;
-}
-
-.button {
-   margin: 40px 0;
-   overflow: hidden;
-   z-index: 2;
-}
-
-.button button {
-   cursor: pointer;
-   position: relative;
-   z-index: 2;
-}
-
-.pass-forgot {
-   width: 100%;
-   float: left;
-   text-align: center;
-   color: rgba(0, 0, 0, 0.4);
-   font-size: 18px;
-}
-
-.click-efect {
-   position: absolute;
-   top: 0;
-   left: 0;
-   background: #00E6FE;
-   /*border-radius: 50%;*/
-}
-
-.overbox {
-   width: 100%;
-   /*height: 100%;*/
-   position: absolute;
-   top: -8%;
-   left: 0;
-   overflow: inherit;
-   /*border-radius: 50px;*/
-   padding: 60px 50px 40px 50px;
-}
-
-.overbox .title,
-.overbox .button,
-.overbox .input {
-   z-index: 111;
-   position: relative;
-   color: #fff !important;
-   display: none;
-}
-
-.overbox .title {
-   width: 80%;
-}
-
-.overbox .input {
-   margin-top: 20px;
-}
-
-.overbox .input input,
-.overbox .input label {
-   color: #fff;
-}
-
-.overbox .material-button,
-.overbox .material-button .shape,
-.overbox .alt-2,
-.overbox .alt-2 .shape {
-   display: block;
-}
-.material-button{
-   border-radius: 50%;
-
-}
-.material-button,
-.alt-2 {
-   width: 70px;
-   height: 70px;
-   background: #00E6FE;
-   position: absolute;
-   top: 40px;
-   right: -20px;
-   cursor: pointer;
-   z-index: 100;
-   transform: translate(0%, 0%);
-   -webkit-transform: translate(0%, 0%);
-   -ms-transform: translate(0%, 0%);
-}
-
-.material-button .shape,
-.alt-2 .shape {
-   position: absolute;
-   top: 0;
-   right: 0;
-   width: 100%;
-   height: 100%;
-}
-
-.material-button .shape:before,
-.alt-2 .shape:before,
-.material-button .shape:after,
-.alt-2 .shape:after {
-   content: "";
-   background: #fff;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%) rotate(360deg);
-   -webkit-transform: translate(-50%, -50%) rotate(360deg);
-   -ms-transform: translate(-50%, -50%) rotate(360deg);
-}
-
-.material-button .shape:before,
-.alt-2 .shape:before {
-   width: 25px;
-   height: 4px;
-}
-
-.material-button .shape:after,
-.alt-2 .shape:after {
-   height: 25px;
-   width: 4px;
-}
-
-.material-button.active,
-.alt-2.active {
-   top: 50%;
-   right: 50%;
-   transform: translate(50%, -50%) rotate(0deg);
-   -webkit-transform: translate(50%, -50%) rotate(0deg);
-   -ms-transform: translate(50%, -50%) rotate(0deg);
-}
-
-body {
-   background-image: url(https://images.unsplash.com/photo-1475234561019-11e030717c51?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=);
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   min-height: 100vh;
-   font-family: 'Roboto', sans-serif;
-}
-
-body,
-html {
-}
-
-.materialContainer {
-   width: 100%;
-   max-width: 400px;
-   position: absolute;
-   top: 40%;
-   /*left: 10%;*/
-   transform: translate(-50%, -50%);
-   -webkit-transform: translate(-50%, -50%);
-   -ms-transform: translate(-50%, -50%);
-}
-
-
-*,
-*:after,
-*::before {
-   -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   text-decoration: none;
-   list-style-type: none;
-   outline: none;
-}
-.my-container{
-   width: 100%;
-   height: 100%;
-   background-color: #0803E499 !important;
-   position: absolute;
-   z-index: 2;
-}
-</style>
+   <title>My first program</title>
 </head>
 <body>
-<!-- <img class="home-bg" src="../img/mentorshipsliderthree.png"> -->
-<header>
-    
-</header>
-<!--Form with header-->
-<div class="my-container">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head profile="http://gmpg.org/xfn/11">
+      
+<title>Mentor001 | Log In & Sign Up</title>
+
+<link rel="stylesheet" href="style.css" type="text/css" media="all">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" type="text/css" media="all">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+$('.form-control').on('focus blur', function (e) {
+    $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+}).trigger('blur');
+});//]]>  
+</script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+</head>  
+<body style="height: 100%; overflow: hidden; width: 100% !important;">
+
 <!-- show any messages that come back with authentication -->
 <% if (message.length > 0) { %>
 <h1 style="text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: #fff; "><%= message %></h1>
 <% } %>
-<div class="materialContainer container">
 
-   <!--Login Form starts here-->
-   <form action="/getin" method="post">
-   <div class="box">
+<div id="fback"><div class="girisback"></div><div class="kayitback"></div></div>
+        
+      <div id="textbox">
+         <div class="toplam">
+                
+            <div class="left">
+                <div id="ic">
+               <h2>Sign Up</h2>
+                  <form id="girisyap" name="signup_form" id="signup_form" method="post" enctype="multipart/form-data" onsubmit="return false;">
 
-      <div class="title">LOGIN</div>
+               <div class="yarim form-group">
+                       <label class="control-label" for="inputNormal">Username</label>
+                       <input type="text" name="signup_username" id="signup_username" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+               </div>
+               <div class="yarim sn form-group">
+                       <label class="control-label" for="inputNormal">Full Name</label>
+                       <input type="text" name="field_1" id="field_1" value="" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <div class="form-group">
+                       <label class="control-label" for="inputNormal">Email</label>
+                       <input type="text" name="signup_email" id="signup_email" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <div class="form-group">
+                       <label class="control-label" for="inputNormal">Password</label>
+                       <input type="password" name="signup_password" id="signup_password" value="" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+               </div>
+               <div class="form-group soninpt">
+                     <label class="control-label" for="inputNormal">Confirm Password</label>
+                     <input type="password" name="signup_password_2" id="field_2" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <input type="submit" name="signup_submit" id="signup_submit" value="Sign Up" class="girisbtn"  />
+               </form>
 
-      <div class="input">
-         <label for="name">Email</label>
-         <input type="text" name="email" id="name">
-         <span class="spin"></span>
+                <button id="moveright">Log In</button>
+            </div>
+            </div>
+
+            <div class="right">
+            <div id="ic">
+               <h2>Login</h2>
+               
+               <form name="login-form" id="girisyap" id="sidebar-user-login" method="post" onsubmit="return false;">
+
+               <div class="form-group">
+                       <label class="control-label" for="inputNormal">Username</label>
+                          <input type="text" name="log" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+               </div>
+               <div class="form-group soninpt">
+                       <label class="control-label" for="inputNormal">Password</label>
+                          <input type="password" name="pwd" class="bp-suggestions form-control" cols="50" rows="10"></input>
+               </div>
+               <input type="submit" value="Login" class="girisbtn" tabindex="100" />
+               </form>
+
+               <button id="moveleft">Sign Up</button>
+                </div>
+            </div>
+
+         </div>
       </div>
 
-      <div class="input">
-         <label for="pass">Password</label>
-         <input type="password" name="password" id="pass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="button login">
-         <button><span>GO</span> <i class="fa fa-check"></i></button>
-      </div>
-
-      <a href="" class="pass-forgot">Forgot your password?</a>
-
-   </div>
-   </form>
-
-   <!--Registration Form starts here-->
-   <form action="/signup" method="post">
-   <div class="overbox">
-      <div class="material-button alt-2"><span class="shape"></span></div>
-
-      <div class="title">REGISTER</div>
-
-      <div class="input">
-         <label for="username">Username</label>
-         <input type="text" name="username" id="username">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="regname">Email</label>
-         <input type="text" name="email" id="regname">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="dob">DOB</label>
-         <input type="date" name="dob" id="dob">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="regpass">Password</label>
-         <input type="password" name="password" id="regpass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="reregpass">Confirm Password</label>
-         <input type="password" name="pass-again" id="reregpass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="button">
-         <button><span>NEXT</span></button>
-      </div>
-
-
-   </div>
-   </form>
-
-</div>
-</div>
-<!--/Form with header-->
-
-<script type="text/javascript">
-    $(function() {
-
-   $(".input input").focus(function() {
-
-      $(this).parent(".input").each(function() {
-         $("label", this).css({
-            "line-height": "18px",
-            "font-size": "18px",
-            "font-weight": "100",
-            "top": "0px"
-         })
-         $(".spin", this).css({
-            "width": "100%"
-         })
-      });
-   }).blur(function() {
-      $(".spin").css({
-         "width": "0px"
-      })
-      if ($(this).val() == "") {
-         $(this).parent(".input").each(function() {
-            $("label", this).css({
-               "line-height": "40px",
-               "font-size": "16px",
-               "font-weight": "300",
-               "top": "10px"
-            })
-         });
-
-      }
-   });
-
-   $(".button").click(function(e) {
-      var pX = e.pageX,
-         pY = e.pageY,
-         oX = parseInt($(this).offset().left),
-         oY = parseInt($(this).offset().top);
-
-      $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' + (pY - oY) + 'px;"></span>')
-      $('.x-' + oX + '.y-' + oY + '').animate({
-         "width": "500px",
-         "height": "500px",
-         "top": "-250px",
-         "left": "-250px",
-
-      }, 600);
-      $("button", this).addClass('active');
-   })
-
-   $(".alt-2").click(function() {
-      if (!$(this).hasClass('material-button')) {
-         $(".shape").css({
-            "width": "100%",
-            "height": "100%",
-            "transform": "rotate(0deg)"
-         })
-
-         setTimeout(function() {
-            $(".overbox").css({
-               "overflow": "initial"
-            })
-         }, 600)
-
-         $(this).animate({
-            "width": "70px",
-            "height": "70px"
-         }, 500, function() {
-            $(".box").removeClass("back");
-
-            $(this).removeClass('active')
-         });
-
-         $(".overbox .title").fadeOut(300);
-         $(".overbox .input").fadeOut(300);
-         $(".overbox .button").fadeOut(300);
-
-         $(".alt-2").addClass('material-buton');
-      }
-
-   })
-
-   $(".material-button").click(function() {
-
-      if ($(this).hasClass('material-button')) {
-         setTimeout(function() {
-            $(".overbox").css({
-               "overflow": "hidden"
-            })
-            $(".box").addClass("back");
-         }, 200)
-         $(this).addClass('active').animate({
-            "width": "700px",
-            "height": "550px"
-         });
-
-         setTimeout(function() {
-            $(".shape").css({
-               "width": "50%",
-               "height": "50%",
-               "transform": "rotate(45deg)"
-            })
-
-            $(".overbox .title").fadeIn(300);
-            $(".overbox .input").fadeIn(300);
-            $(".overbox .button").fadeIn(300);
-         }, 700)
-
-         $(this).removeClass('material-button');
-
-      }
-
-      if ($(".alt-2").hasClass('material-buton')) {
-         $(".alt-2").removeClass('material-buton');
-         $(".alt-2").addClass('material-button');
-      }
-
-   });
-
+      <script type="text/javascript" >
+      $(document).ready(function() {
+    $('#moveleft').click(function() {
+        $('#textbox').animate({
+        'marginLeft' : "0" //moves left
+        });
+        
+        $('.toplam').animate({
+        'marginLeft' : "100%" //moves right
+        });
+    });
+    
+    $('#moveright').click(function() {
+        $('#textbox').animate({
+        'marginLeft' : "50%" //moves right
+        });
+        
+        $('.toplam').animate({
+        'marginLeft' : "0" //moves right
+        });
+    });
+    
 });
-</script>
+      </script>
+
+   </body>
+</html>
 </body>
 </html>

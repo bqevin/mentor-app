@@ -39,15 +39,15 @@ $('.form-control').on('focus blur', function (e) {
             <div class="left">
                 <div id="ic">
                <h2>Sign Up</h2>
-                  <form id="girisyap" name="signup_form" id="signup_form" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                  <form id="girisyap" name="signup_form" id="signup_form" method="post" action="/signup" enctype="multipart/form-data" onsubmit="return false;">
 
                <div class="sn form-group">
                        <label class="control-label" for="inputNormal">Full Name</label>
-                       <input type="text" name="fname" id="field_1" class="bp-suggestions form-control" cols="50" rows="10"></input>
+                       <input type="text" name="name" id="field_1" class="bp-suggestions form-control" cols="50" rows="10"></input>
                </div>
                <div class="form-group">
                        <label class="control-label" for="inputNormal">Email</label>
-                       <input type="text" name="signup_email" id="signup_email" class="bp-suggestions form-control" cols="50" rows="10"></input>
+                       <input type="text" name="email" id="signup_email" class="bp-suggestions form-control" cols="50" rows="10"></input>
                </div>
 
 
@@ -59,11 +59,11 @@ $('.form-control').on('focus blur', function (e) {
 
                <div class="form-group">
                        <label class="control-label" for="inputNormal">Password</label>
-                       <input type="password" name="signup_password" id="signup_password" value="" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+                       <input type="password" name="password" id="signup_password" value="" class="bp-suggestions form-control" cols="50" rows="10" ></input>
                </div>
                <div class="form-group soninpt">
                      <label class="control-label" for="inputNormal">Confirm Password</label>
-                     <input type="password" name="signup_password_2" id="field_2" class="bp-suggestions form-control" cols="50" rows="10"></input>
+                     <input type="password" name="password_2" id="field_2" class="bp-suggestions form-control" cols="50" rows="10"></input>
                </div>
                <input type="submit" name="signup_submit" id="signup_submit" value="Sign Up" class="girisbtn"  />
                </form>
@@ -76,7 +76,7 @@ $('.form-control').on('focus blur', function (e) {
             <div id="ic">
                <h2>Login</h2>
                
-               <form name="login-form" id="girisyap" id="sidebar-user-login" method="post" onsubmit="return false;">
+               <form name="login-form" id="girisyap" id="sidebar-user-login" method="post" action="/getin" onsubmit="return false;">
 
                <div class="form-group">
                        <label class="control-label" for="inputNormal">Email</label>

@@ -36,6 +36,11 @@ $('.form-control').on('focus blur', function (e) {
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <style type="text/css">
+  body{
+    height: 100%; 
+    overflow: hidden; 
+    width: 100% !important;
+  }
   .control-label{
     margin-top: -5px;
   }
@@ -43,14 +48,27 @@ $('.form-control').on('focus blur', function (e) {
     margin-left: 10px;
     line-height: 2;
   }
+  .alert{
+    position: absolute; 
+    z-index: 10000; 
+    width: 100%; 
+    text-align: center; 
+    padding-top: 20px; 
+    font-weight: bold;
+  }
+  .sign-with{
+    margin-top: 30px; 
+    float: left; 
+    margin-left: 40px;
+  }
 </style>
 </head>  
-<body style="height: 100%; overflow: hidden; width: 100% !important;">
+<body >
 <!-- show any messages that come back with authentication -->
 
-    <% if (message.length > 0) { %>
-        <div class="alert alert-danger" style="position: absolute; z-index: 10000; width: 100%; text-align: center; padding-top: 20px; font-weight: bold;"><%= message %></div>
-    <% } %>
+<% if (message.length > 0) { %>
+    <div class="alert alert-danger "><%= message %></div>
+<% } %>
 <div id="fback"><div class="girisback"></div><div class="kayitback"></div></div>
         
       <div id="textbox">
@@ -90,7 +108,7 @@ $('.form-control').on('focus blur', function (e) {
                </form>
                 <button id="moveright">Log In</button>
 
-                <div class="form-group" style="margin-top: 30px; float: left; margin-left: 40px;">
+                <div class="form-group sign-with">
                 <a class="btn btn-default red"><i class="fa fa-google-plus fa-lg"></i><span class="btn-text">Google</span></a>
                 <a class="btn btn-default" href="/auth/facebook" style="background: #0d47a1"><i class="fa fa-facebook fa-lg"></i><span class="btn-text">Facebook</span></a>
                 </div>
@@ -118,41 +136,36 @@ $('.form-control').on('focus blur', function (e) {
                <button id="moveleft">Sign Up</button>
                 </div>
 
-
             </div>
-
          </div>
-
-
       </div>
 
       <script type="text/javascript" >
       $(document).ready(function() {
 
-    $('#moveleft').click(function() {
-        $('#textbox').animate({
-        'marginLeft' : "0" //moves left
+        $('#moveleft').click(function() {
+            $('#textbox').animate({
+            'marginLeft' : "0" //moves left
+            });
+            
+            $('.toplam').animate({
+            'marginLeft' : "100%" //moves right
+            });
         });
         
-        $('.toplam').animate({
-        'marginLeft' : "100%" //moves right
-        });
-    });
-    
-    $('#moveright').click(function() {
-        $('#textbox').animate({
-        'marginLeft' : "50%" //moves right
+        $('#moveright').click(function() {
+            $('#textbox').animate({
+            'marginLeft' : "50%" //moves right
+            });
+            
+            $('.toplam').animate({
+            'marginLeft' : "0" //moves right
+            });
         });
         
-        $('.toplam').animate({
-        'marginLeft' : "0" //moves right
-        });
     });
-    
-});
 
       </script>
-
    </body>
 </html>
 </body>

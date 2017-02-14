@@ -26,6 +26,11 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <style type="text/css">
+  .card-image{
+    border: solid 1px #ccc; 
+    padding: 20px 25px; 
+    border-radius: .25rem .25rem 0 0;
+  }
   .container-fluid {
    background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(67).jpg");
    background-repeat: no-repeat;
@@ -61,6 +66,10 @@ header{
 }
 .navbar{
   background: rgba(0, 0, 0, 0.5);
+}
+.edit-btn{
+  width: 100%;
+  margin-left: -1px;
 }
 </style>
 </head>  
@@ -111,11 +120,22 @@ header{
 <div class="card profile-card">
 
     <!--Card image-->
-   <div class="container" style="border: solid 1px #ccc; padding: 20px 25px; border-radius: .25rem .25rem 0 0;
-}">
+   <div class="container card-image">
    <div class="row">
    	<div class="col-md-4">
    		<img class="img-thumbnail" src="../img/profile.jpg" alt="" >
+
+
+
+
+      <!-- Edit Button Onll Displaid When use Views Their Own Profile -->
+      <div class="item">
+        <button type="button" class="btn btn-default edit-btn">Edit Profile &nbps;<i class="fa fa-edit" aria-hidden="true"></i></button>
+      </div>
+
+
+
+
    	</div>
 
    	<div class="col-md-8" >
@@ -128,7 +148,7 @@ header{
    		<strong class="label col-md-4">Cartegory</strong><span class="col-md-8">Mentor</span>
    		</li>
    		<li class="list-group-item row">
-   		<strong class="label col-md-4">Age</strong><span class="col-md-8">38 years</span>
+   		<strong class="label col-md-3">Age</strong><span class="col-md-3">38 years</span>
    		</li>
    		<li class="list-group-item row">
    		<strong class="label col-md-4">Email</strong><span class="col-md-8"><%= mentor.facebook.email %></span>

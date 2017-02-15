@@ -3,6 +3,7 @@
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 
 // load up the user model
@@ -178,6 +179,52 @@ module.exports = function(passport) {
                     });
                 }
 
+            });
+        });
+
+    }));
+    // =========================================================================
+    // GOOGLE ==================================================================
+    // =========================================================================
+    passport.use(new GoogleStrategy({
+
+        clientID        : configAuth.googleAuth.clientID,
+        clientSecret    : configAuth.googleAuth.clientSecret,
+        callbackURL     : configAuth.googleAuth.callbackURL,
+
+    },
+    function(token, refreshToken, profile, done) {
+
+        // make the code asynchronous
+        // Mentor.findOne won't fire until we have all our data back from Google
+        process.nextTick(function() {
+
+            // try to find the mentor based on their google id
+            Mentor.findOne({ 'google.id' : profile.id }, function(err, mentor) {
+                if (err)
+                    return done(err);
+
+                if (mentor) {
+
+                    // if a mentor is found, log them in
+                    return done(null, mentor);
+                } else {
+                    // if the mentor isnt in our database, create a new mentor
+                    var newMentor          = new Mentor();
+
+                    // set all of the relevant information
+                    newMentor.google.id    = profile.id;
+                    newMentor.google.token = token;
+                    newMentor.google.name  = profile.displayName;
+                    newMentor.google.email = profile.emails[0].value; // pull the first email
+
+                    // save the mentor
+                    newMentor.save(function(err) {
+                        if (err)
+                            throw err;
+                        return done(null, newMentor);
+                    });
+                }
             });
         });
 

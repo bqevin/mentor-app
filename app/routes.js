@@ -1,6 +1,5 @@
 // app/routes.js
 
-//var path = require("path");
 // grab the mentor model we just created
 var Mentor = require('./models/mentor');
 
@@ -21,8 +20,8 @@ module.exports = function(app, passport) {
         });
     });
 
-    //Delete all users
-    app.get('/api/danger', function(req, res) {
+    //Delete all mentors
+    app.get('/api//mentors/delete/everything', function(req, res) {
         // use mongoose to get all mentors in the database
         Mentor.remove(function(err) {
            if (err)
@@ -44,16 +43,16 @@ module.exports = function(app, passport) {
     // LOGIN ===============================
     // =====================================
     // show the login form
-    app.get('/login', function(req, res) {
+    app.get('/mentor/login', function(req, res) {
 
         // render the page and pass in any flash data if it exists
         res.render('views/register.ejs', { message: req.flash('loginMessage') }); 
     });
 
      // process the login form
-    app.post('/getin', passport.authenticate('local-login', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/login', // redirect back to the signup page if there is an error
+    app.post('/mentor/getin', passport.authenticate('local-login', {
+        successRedirect : '/mentor/profile', // redirect to the secure profile section
+        failureRedirect : '/mentor/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
 
@@ -63,28 +62,25 @@ module.exports = function(app, passport) {
     // SIGNUP ==============================
     // =====================================
     // show the signup form
-    app.get('/register', function(req, res) {
+    app.get('/mentor/register', function(req, res) {
 
         // render the page and pass in any flash data if it exists
         res.render('views/register.ejs', { message: req.flash('signupMessage') });
     });
 
     // process the signup form
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/register', // redirect back to the signup page if there is an error
+    app.post('/mentor/signup', passport.authenticate('local-signup', {
+        successRedirect : '/mentor/profile', // redirect to the secure profile section
+        failureRedirect : '/mentor/register', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
-    // process the signup form
-    // app.post('/signup', do all our passport stuff here);
 
     // =====================================
     // PROFILE SECTION =====================
     // =====================================
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/profile', isLoggedIn, function(req, res) {
+    app.get('/mentor/profile', isLoggedIn, function(req, res) {
         res.render('views/profile.ejs', {
             mentor : req.mentor // get the mentor out of session and pass to template
         });
@@ -95,12 +91,12 @@ module.exports = function(app, passport) {
     // FACEBOOK ROUTES =====================
     // =====================================
     // route for facebook authentication and login
-    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+    app.get('/mentor/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
     // handle the callback after facebook has authenticated the user
-    app.get('/auth/facebook/callback',
+    app.get('/mentor/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect : '/profile',
+            successRedirect : '/mentor/profile',
             failureRedirect : '/'
         }));
     // =====================================
@@ -109,12 +105,12 @@ module.exports = function(app, passport) {
     // send to google to do the authentication
     // profile gets us their basic information including their name
     // email gets their emails
-    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+    app.get('/mentor/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 
     // the callback after google has authenticated the user
-    app.get('/auth/google/callback',
+    app.get('/mentor/auth/google/callback',
             passport.authenticate('google', {
-                    successRedirect : '/profile',
+                    successRedirect : '/mentor/profile',
                     failureRedirect : '/'
             }));
 

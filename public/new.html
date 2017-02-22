@@ -1,471 +1,1771 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="mentorApp">
+<html class="google-js mmfb" lang="en" itemscope="" itemtype="http://schema.org/WebPage"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <base href="./">
+  <meta charset="utf-8">
+  <script>
+    (function(H){H.className=H.className.replace(/\bgoogle\b/,'google-js')})(document.documentElement)
+  </script>
+  <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+  <meta content="It doesn't matter how big your school or your budget is. Google provides easy tools to engage students anytime, anywhere, on any device." name="description">
+  <title>
+    Mentor 001: A solution built for mentors and mentees
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,100,700,500italic,400%7CMaterial+Icons+Extended%7COpen+Sans:300,400,600,700%7CProduct+Sans:400&amp;lang=en" rel="stylesheet">
+  <link href="css/maia.min.css" rel="stylesheet">
+  <style>
+  .m-icon,.m-icon-pseudo:after{font-family:'Material Icons Extended';text-rendering:optimizeLegibility;font-feature-settings:"liga" 1;-webkit-font-feature-settings:"liga" 1;-moz-font-feature-settings:"liga" 1;-ms-font-feature-settings:"liga" 1;-o-font-feature-settings:"liga" 1;font-style:normal;text-transform:none;line-height:1;font-size:24px}
+  </style>
+  <link href="img/logo.png" rel="shortcut icon" type="image/png">
+  <link href="https://edu.google.com/" rel="canonical">
+  <meta content="NOODP,NOYDIR" name="robots">
+  <link href="https://plus.google.com/+GoogleforEducation" rel="publisher">
+  <meta content="Google for Education: A solution built for teachers and students" property="og:title">
+  <meta content="website" property="og:type">
+  <meta content="https://edu.google.com/" property="og:url">
+  <meta content="https://www.google.com/images/video-geg_2x.png" property="og:image">
+  <meta content="It doesn't matter how big your school or your budget is. Google provides easy tools to engage students anytime, anywhere, on any device." property="og:description">
+  <meta content="summary" name="twitter:card">
+  <meta content="https://edu.google.com/" name="twitter:url">
+  <meta content="Google for Education: A solution built for teachers and students" name="twitter:title">
+  <meta content="https://www.google.com/images/video-geg_2x.png" name="twitter:image">
+  <meta content="It doesn't matter how big your school or your budget is. Google provides easy tools to engage students anytime, anywhere, on any device." name="twitter:description">
+  <meta content="@googleforedu" name="twitter:creator">
+  <meta content="Google for Education: A solution built for teachers and students" itemprop="name">
+  <meta content="It doesn't matter how big your school or your budget is. Google provides easy tools to engage students anytime, anywhere, on any device." itemprop="description">
+  <meta content="https://www.google.com/images/video-geg_2x.png" itemprop="image">
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Product",
+    "brand": "Google Inc.",
+    "name": "Google for Education: A solution built for teachers and students",
+    "description": "It doesn't matter how big your school or your budget is. Google provides easy tools to engage students anytime, anywhere, on any device.",
+    "url": "https://edu.google.com/",
+    "logo": "https://www.google.com/images/video-geg_2x.png",
+    "sameAs": [
+      "https://twitter.com/googleforedu",
+      "https://plus.google.com/+GoogleforEducation",
+      "https://blog.google/topics/education/",
+      "https://www.youtube.com/user/eduatgoogle"
+    ]
+  }
+  </script>
+<script>
+  var cookiepathValue = function (){
+  var pna = location.pathname.split('/');
+  var cp = '/';
+    if(pna.length > 2) {
+      cp='/' + pna[1] + '/';
+    }
+    return cp;
+  };
+  var uaRef = function(){
+    var dr = document.referrer;
+    //internal paths
+    var internalPaths = /\/(enterprise|work|edu|a\/signup)\//;
+    //referrer path
+    var refPathMatch = dr.match(/\..+?\/([^\?#]*)/);
+    var refPath = refPathMatch && refPathMatch.length>1?'/'+refPathMatch[1]: '';
+    //referrer host
+    var refHostMatch = dr.match(/\/\/(.+?)\//);
+    var refHost = refHostMatch && refHostMatch.length>1?refHostMatch[1]: '';
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <title>Mentor001</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Material Design Bootstrap -->
-    <link href="./css/mdb.css" rel="stylesheet">
-
-    <link href="./css/style.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <!-- Template styles -->
-    <style rel="stylesheet">
-        /* TEMPLATE STYLES */
-        /* Necessary for full page carousel*/
-        
-        html,
-        body {
-            height: 100%;
-        }
-        /* Navigation*/
-        
-        .navbar {
-            background-color: white;
-        }
-
-        .nav-tem {
-            color: #1d95d2;
-        }
-        
-        .top-nav-collapse {
-            background-color: #eee;
-        }
-        
-        footer.page-footer {
-            text-decoration: #f99d25;
-            background-color: #eee;
-            z-index: 1030;
-        }
-        
-        @media only screen and (max-width: 768px) {
-            .navbar {
-                background-color: white;
-            }
-        }
-
-        @media only screen and (max-width: 479px) {
-            .cta-btn {
-                display: none;
-            }
-        }
-
-        @media only screen and (max-width: 479px) {
-            .logo {
-                width: 80px;
-            }
-        }
-
-        @media only screen and (min-width: 479px) {
-           .cta-icons  {
-            display: none;
-            visibility: hidden;
-           }
-        }
-
-        
-        /* Carousel*/
-        
-        .carousel {
-            height: 80%;
-        }
-        
-        @media (max-width: 776px) {
-            .carousel {
-                height: 100%;
-            }
-        }
-        
-        .carousel-item,
-        .active {
-            height: 100%;
-        }
-        
-        .carousel-inner {
-            height: 100%;
-        }
-        
-        .carousel-item:nth-child(1) {
-            background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            opacity: 0.4;
-        }
-        
-        .carousel-item:nth-child(2) {
-            background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .carousel-item:nth-child(3) {
-            background-image: url("http://mdbootstrap.com/img/Photos/Slides/img%20(67).jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        /*Caption*/
-        
-        .flex-center {
-            color: #fff;
-        }
-    </style>
-<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
-
+    var newRef = '';
+    if(!(refPath.match(internalPaths) && refHost.match(/\.google(?:goro)?\./))){
+                newRef = dr.split('?')[0]
+    }
+    return newRef;
+  };
+  dataLayer = [{
+    'uaReferrer':uaRef(),
+    'country': 'us',
+    'region': 'noram',
+    'propertyIndex': '36',
+    'language': 'en',
+    'host': location.host,
+    'hostNoSub': location.host.replace(/^(.+\.)google/g, "google"),
+    'path': location.pathname,
+    'cookiePath': cookiepathValue(),
+    'cookiePathCopy': ['/work/apps/business/', 'intl', '/edu/'],
+    'file': 'index.html',
+    'fileNoSuffix': 'index'
+  }];
+</script>
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T7366R');
+</script>  <link href="css/all.min.css" rel="stylesheet">
 </head>
+<body class="home-page ng-scope">
 
-<body ng-controller="MainController">
-
-
-    <!--Navbar-->
-    <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-
-        <!-- Collapse button-->
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
-            <i class="fa fa-bars"></i>
-        </button>
-
-        <div class="container">
-
-            <!--Collapse content-->
-            <div >
-                <!--Navbar Brand-->
-                
-                <div class="collapse navbar-toggleable-xs" id="collapseEx">
-                <a class="logo navbar-brand" href="./" target=""><img src="img/logo.png" width="85px"></a>
-                <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">MENTORS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">TESTIMONIALS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT</a>
-                    </li>
-                </ul>
+<div id="maia-header" class="maia-header" role="banner">
+  <div class="maia-aux">
+    <div class="logo">
+      <a href="./" target="_self">
+        <img src="img/mentor001.png" alt="Mentor 001" width="60px">
+        Mentor 001
+      </a>
+    </div>
+    <a href="#content" class="maia-teleport" target="_self">Skip to content</a>
+    <div class="header-side-nav">
+      <div class="maia-aux">
+<a id="get-help-desktop" class="maia-button expert-desktop talk-to get-help" data-g-event="Edu: Global Header" data-g-action="Find A Mentor" data-g-label="Header" href="/contact/" target="_self">Find A Mentor</a><a id="get-google-desktop" class="maia-button expert-desktop " data-g-event="Edu: Global Header" data-g-action="Become A Mentor" data-g-label="Header" href="https://eduproducts.withgoogle.com/?lb=edu-registration" target="_self">Become A Mentor</a>      </div>
+   </div>  </div>
+</div>  <div class="maia-nav maia-complex" id="maia-nav-x" role="navigation">
+<div class="maia-aux">
+  <div class="toggle-nav"></div>
+  <ul class="desktop-nav">
+    <li class="active">
+      <a class="nav nav-home" data-g-action="Home" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/" target="_self">Home</a>
+    </li>
+          <li class="global-nav-dropdown" edu-nav-item="">
+            <a class="nav nav-products" target="_self">Mentors</a>
+            <div class="dropdown dropdown-products">
+              <ul class="dropdown-list">
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Products:Devices" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/devices/" target="_self">Devices
+                      <br><span class="dropdown-item-description">Chromebooks and Tablets</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Products:Productivity Tools" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/productivity-tools/" target="_self">Productivity Tools
+                      <br><span class="dropdown-item-description">Docs, Gmail and More</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Products:Classroom" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/productivity-tools/classroom/" target="_self">Classroom
+                      <br><span class="dropdown-item-description">Mission control for teachers and students</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Products:Expeditions" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/expeditions/" target="_self">Expeditions
+                      <br><span class="dropdown-item-description">Virtual reality field trips</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Products:More Products" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/more-products/" target="_self">More Products
+                      <br><span class="dropdown-item-description">Cloud, Chrome Browser and More</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Products:Google Cloud Platform" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/cloud-platform/" target="_self">Google Cloud Platform
+                      <br><span class="dropdown-item-description">Cloud tools for Higher Education</span>
+                    </a>
+                  </li>
+              </ul>
             </div>
-                <div class="cta-btn" style="float: right;">
-                    <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg waves-effect waves-light" style="background-color: #a43795;">Connect With Mentor</a>
-                    <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg waves-effect waves-light" style="background-color: #f99d25;">Connect With Mentee</a>
-                </div>
-                <div class="cta-icons" style="float: right;display: flex;padding-top: 15px;color: #f99d25;">
-                    <center><a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class=""><i class="fa fa-user-circle fa-2x"></i><br>MENTOR</a></center>
-                    <center style="margin-left: 15px;"><a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="" ><i class="fa fa-user-circle-o fa-2x"></i><br>MENTEE</a></center>
-                </div>
-                
+          </li>
+          <li class=" global-nav-dropdown" edu-nav-item="">
+            <a class="nav nav-training" target="_self">Training</a>
+            <div class="dropdown dropdown-training">
+              <ul class="dropdown-list">
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Training:Training Overview" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/training/" target="_self">Training Overview
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Training:For Educators" data-g-event="Edu: Global Nav" data-g-label="Nav" href="https://edutrainingcenter.withgoogle.com" target="_self">For Educators
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Training:For Trainers" data-g-event="Edu: Global Nav" data-g-label="Nav" href="https://edutrainingcenter.withgoogle.com/certification_trainer" target="_self">For Trainers
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Training:For IT Admins" data-g-event="Edu: Global Nav" data-g-label="Nav" href="http://certification.googleapps.com/admin" target="_self">For IT Admins
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Training:Directory of Partners" data-g-event="Edu: Global Nav" data-g-label="Nav" href="https://edudirectory.withgoogle.com" target="_self">Directory of Partners
+                      <br><span class="dropdown-item-description">to help your school go Google</span>
+                    </a>
+                  </li>
+              </ul>
             </div>
-            <!--/.Collapse content-->
+          </li>
+          <li class=" global-nav-dropdown" edu-nav-item="">
+            <a class="nav nav-resources" target="_self">Resources</a>
+            <div class="dropdown dropdown-resources">
+              <ul class="dropdown-list">
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Resources:News &amp; Events" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/news-and-events/" target="_self">News &amp; Events
+                      <br><span class="dropdown-item-description">in Google for Education</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Resources:Communities" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/communities/" target="_self">Communities
+                      <br><span class="dropdown-item-description">for educators using Google</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Resources:Programs" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/programs/" target="_self">Programs
+                      <br><span class="dropdown-item-description">for students and teachers</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Resources:Case Studies" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/case-studies/" target="_self">Case Studies
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Resources:Computer Science Education" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/computerscience/" target="_self">Computer Science Education
+                      <br><span class="dropdown-item-description">Programs, Funding, and Research</span>
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="link-list" data-g-action="Resources:Global Education" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/global-education/" target="_self">Global Education
+                    </a>
+                  </li>
+              </ul>
+            </div>
+          </li>
+        <li class=" right" edu-nav-item="">
+          <a class="nav" data-g-action="IT Guides" data-g-event="Edu: Global Nav" data-g-label="Nav" event="autotrack-data-g" href="/it/" target="_self">Contacts</a>
+        </li>
+        <li class=" right" edu-nav-item="">
+          <a class="nav" data-g-action="Higher Ed" data-g-event="Edu: Global Nav" data-g-label="Nav" event="autotrack-data-g" href="/higher-education/" target="_self">Success Stories</a>
+        </li>
+  </ul>
+</div><div class="mobile-nav ng-scope" style="height: 0px;">
+  <div class="ent-links maia-cols">
 
+    <div class="ent-unit products-group first">
+      <div class="ent-unit-break-wrapper">
+        <h4 class="section-header">
+          <span class="product-name-mobile">Mentors</span><span class="arrow-icon">&nbsp;</span>
+        </h4>
+        <ul>
+              <li>
+                <a data-g-action="Devices" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/devices/" target="_self">Devices
+                <span class="nav-subtext">Chromebooks and Tablets</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Productivity Tools" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/productivity-tools/" target="_self">Productivity Tools
+                <span class="nav-subtext">Docs, Gmail and More</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Classroom" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/productivity-tools/classroom/" target="_self">Classroom
+                <span class="nav-subtext">Mission control for teachers and students</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Expeditions" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/expeditions/" target="_self">Expeditions
+                <span class="nav-subtext">Virtual reality field trips</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="More Products" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/more-products/" target="_self">More Products
+                <span class="nav-subtext">Cloud, Chrome Browser and More</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Google Cloud Platform" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/products/cloud-platform/" target="_self">Google Cloud Platform
+                <span class="nav-subtext">Cloud tools for Higher Education</span>
+                </a>
+              </li>
+          </ul>
         </div>
+      </div>
 
-    </nav>
-    <!--/.Navbar-->
-
-    <!--Carousel Wrapper-->
-    <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
-        <!--Indicators-->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-1" data-slide-to="1"></li>
-            <li data-target="#carousel-example-1" data-slide-to="2"></li>
-        </ol>
-        <!--/.Indicators-->
-
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-
-            <!--First slide-->
-            <div class="carousel-item active">
-                <!--Caption-->
-                <div class="flex-center animated fadeInDown">
-                    <ul>
-                        <li>
-                            <h1 class="h1-responsive">Material Design for Bootstrap 4</h1></li>
-                        <li>
-                            <p>The most powerful and free UI KIT for the newest Bootstrap</p>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg">Sign up!</a>
-                            <a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg">Learn more</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Caption-->
-            </div>
-            <!--/.First slide-->
-
-            <!--Second slide -->
-            <div class="carousel-item">
-                <!--Caption-->
-                <div class="flex-center animated fadeInDown">
-                    <ul>
-                        <li>
-                            <h1 class="h1-responsive">Lots of tutorials at your disposal</h1>
-                        </li>
-                        <li>
-                            <p>And all of them are FREE!</p>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-primary btn-lg">Start learning</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Caption-->
-            </div>
-            <!--/.Second slide -->
-
-            <!--Third slide-->
-            <div class="carousel-item">
-                <!--Caption-->
-                <div class="flex-center animated fadeInDown">
-                    <ul>
-                        <li>
-                            <h1 class="h1-responsive">Visit our support forum</h1></li>
-                        <li>
-                            <p>Our community can help you with any question</p>
-                        </li>
-                        <li>
-                            <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg">Support forum</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Caption-->
-            </div>
-            <!--/.Third slide-->
+    <div class="ent-unit training-group ">
+      <div class="ent-unit-break-wrapper">
+        <h4 class="section-header">
+          <span class="product-name-mobile">Training</span><span class="arrow-icon">&nbsp;</span>
+        </h4>
+        <ul>
+              <li>
+                <a data-g-action="Training Overview" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/training/" target="_self">Training Overview
+                </a>
+              </li>
+              <li>
+                <a data-g-action="For Educators" data-g-event="Edu: Global Nav" data-g-label="Nav" href="https://edutrainingcenter.withgoogle.com" target="_self">For Educators
+                </a>
+              </li>
+              <li>
+                <a data-g-action="For Trainers" data-g-event="Edu: Global Nav" data-g-label="Nav" href="https://edutrainingcenter.withgoogle.com/certification_trainer" target="_self">For Trainers
+                </a>
+              </li>
+              <li>
+                <a data-g-action="For IT Admins" data-g-event="Edu: Global Nav" data-g-label="Nav" href="http://certification.googleapps.com/admin" target="_self">For IT Admins
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Directory of Partners" data-g-event="Edu: Global Nav" data-g-label="Nav" href="https://edudirectory.withgoogle.com" target="_self">Directory of Partners
+                <span class="nav-subtext">to help your school go Google</span>
+                </a>
+              </li>
+          </ul>
         </div>
-        <!--/.Slides-->
+      </div>
 
-        <!--Controls-->
-        <a class="left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
-            <span class="icon-prev" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+    <div class="ent-unit resources-group ">
+      <div class="ent-unit-break-wrapper">
+        <h4 class="section-header">
+          <span class="product-name-mobile">Resources</span><span class="arrow-icon">&nbsp;</span>
+        </h4>
+        <ul>
+              <li>
+                <a data-g-action="News &amp; Events" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/news-and-events/" target="_self">News &amp; Events
+                <span class="nav-subtext">in Google for Education</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Communities" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/communities/" target="_self">Communities
+                <span class="nav-subtext">for educators using Google</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Programs" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/programs/" target="_self">Programs
+                <span class="nav-subtext">for students and teachers</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Case Studies" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/case-studies/" target="_self">Case Studies
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Computer Science Education" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/computerscience/" target="_self">Computer Science Education
+                <span class="nav-subtext">Programs, Funding, and Research</span>
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Global Education" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/resources/global-education/" target="_self">Global Education
+                </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+    <div class="ent-unit it guides-group ">
+      <div class="ent-unit-break-wrapper">
+        <h4 class="section-header">
+          <span class="product-name-mobile">Success Stories</span><span class="arrow-icon">&nbsp;</span>
+        </h4>
+        <ul>
+              <li>
+                <a data-g-action="IT" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/it/" target="_self">IT
+                </a>
+              </li>
+              <li>
+                <a data-g-action="Privacy Pages" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/trust/" target="_self">Privacy Pages
+                </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+    <div class="ent-unit higher ed-group ">
+      <div class="ent-unit-break-wrapper">
+        <h4 class="section-header">
+          <span class="product-name-mobile">Contacts</span><span class="arrow-icon">&nbsp;</span>
+        </h4>
+        <ul>
+              <li>
+                <a data-g-action="Higher Ed" data-g-event="Edu: Global Nav" data-g-label="Nav" href="/higher-education/" target="_self">Higher Ed
+                </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+    <div class="ent-unit talk-to-an-expert-group last">
+<h4 class="section-header">
+        <a id="get-help-desktop" class="gray-btn talk-to-an-expert-mobile talk-to get-help" data-g-event="Edu: Global Header" data-g-action="Talk to an Expert" data-g-label="Header" href="/contact/" target="_self">Find a Mentor</a>
+      </h4><h4 class="section-header">
+        <a id="get-google-desktop" class="gray-btn talk-to-an-expert-mobile " data-g-event="Edu: Global Header" data-g-action="Get Google Products" data-g-label="Header" href="https://eduproducts.withgoogle.com/?lb=edu-registration" target="_self">Become a Mentor</a>
+      </h4>    </div>
+  </div>
+</div>  </div>
+<!--[if lt IE 8]>
+<div class="maia-aux">
+  <div class="maia-notification">
+    <p><strong>This site is not fully compatible with your browser.</strong></p>
+    <p>To experience the site as intended, we recommend using the latest version of <a href="http://www.microsoft.com/IE9" target="_blank">Internet Explorer</a> or upgrading to <a href="//www.google.com/chrome/" target="_blank">Google Chrome</a>.</p>
+  </div>
+</div>
+<![endif]-->  <div class="centered" data-no-results="No results found. Please try searching for a different term." data-results-string="results" data-seconds-string="seconds" id="global-search-results"></div>
+  <div id="maia-main" role="main">
+      <div class="maia-teleport" id="content"></div>
+<div class="home-wrapper">
+<div class="carousel-wrap home-carousel" set-ng-animate="false">
+  <div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel hero-section-wrapper ng-isolate-scope" ng-swipe-right="prev()" ng-swipe-left="next()" data-carousel="" data-ga="Edu: Hero;Hero" data-interval="7000" template-url="https://edu.google.com/templates/home/carousel.html">
+    <div class="carousel-inner">
+      <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="" template-url="https://edu.google.com/templates/home/slide.html" style="">
+        <div class="section-wrapper fontbonne-hall-academy ng-scope">
+          <div class="section hero-section">
+            <div class="text section-in">
+              <p class="headline slider-headline">Sister Rosemarie brought technology to her 65 years of teaching experience.</p>
+              <p class="subheadline"><a class="learn-more" data-g-event="Edu: Hero" data-g-action="Learn More: Sister Rosemary" data-g-label="Hero" href="/case-studies/fontbonne-hall-academy/" target="_self">Learn More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope active" ng-transclude="" data-slide="" template-url="https://edu.google.com/templates/home/slide.html" style="">
+        <div class="section-wrapper fairfield-county-schools ng-scope">
+          <div class="section hero-section">
+            <div class="text section-in">
+              <p class="headline slider-headline">Fairfield helps students follow passions with Chromebooks &amp; Android tablets</p>
+              <p class="subheadline"><a class="learn-more" data-g-event="Edu: Hero" data-g-action="Learn More: Fairfield County Schools" data-g-label="Hero" href="/case-studies/fairfield-county-schools/" target="_self">Learn More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next',
+    'video-active': videoPlaying
+  }" class="item text-center ng-scope ng-isolate-scope" data-video-slide="" template-url="https://edu.google.com/templates/home/video-slide.html" youtube-id="-6kXa7m5iqU" style="">
+  <div class="content" ng-transclude="">
+        <div class="section-wrapper isle-of-portland-aldridge-community-academy ng-scope">
+          <div class="section hero-section">
+            <div class="text section-in">
+              <p class="headline slider-headline">Isle of Portland Aldridge Community Academy (IPACA) pushes the boundaries of 21st century learning with G Suite and Chromebooks</p>
+              <p class="subheadline"><a class="learn-more" data-g-event="Edu: Hero" data-g-action="Learn More: IPACA" data-g-label="Hero" href="/case-studies/isle-of-portland-aldridge-community-academy/" target="_self">Learn More</a></p>
+              <p><a class="maia-media play-btn" data-g-action="Video: IPACA" data-g-event="Edu: Hero" data-g-label="Hero" target="_self"><img alt="Video Thumbnail" height="62" src="https://edu.google.com/images/play-btn_2x.png" width="62"></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="blocker">&nbsp;</div>
+  <div class="close-btn">&nbsp;</div>
+  <div class="video-content">&nbsp;</div>
+</div>
+      <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next',
+    'video-active': videoPlaying
+  }" class="item text-center ng-scope ng-isolate-scope" data-video-slide="" template-url="https://edu.google.com/templates/home/video-slide.html" youtube-id="m7f3SxVvlPY" style="">
+  <div class="content" ng-transclude="">
+        <div class="section-wrapper movie google-science-fair-winners ng-scope">
+          <div class="section hero-section">
+            <div class="text section-in">
+              <p class="headline slider-headline">Google Science Fair winner develops low cost, portable test for Ebola</p>
+              <p><a class="maia-media play-btn" data-g-action="Video: Google Science Fair Winners" data-g-event="Edu: Hero" data-g-label="Hero" target="_self"><img alt="Video Thumbnail" height="62" src="https://edu.google.com/images/play-btn_2x.png" width="62"></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="blocker">&nbsp;</div>
+  <div class="close-btn">&nbsp;</div>
+  <div class="video-content">&nbsp;</div>
+</div>
+      <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="" template-url="https://edu.google.com/templates/home/slide.html" style="">
+        <div class="section-wrapper green ng-scope">
+          <div class="section hero-section">
+            <div class="text section-in">
+              <p class="headline slider-headline">70 million users of G Suite for Education</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="" template-url="https://edu.google.com/templates/home/slide.html" style="">
+        <div class="section-wrapper green ng-scope">
+          <div class="section hero-section">
+            <div class="text section-in">
+              <p class="headline slider-headline">20 million students and teachers are using Google Classroom</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="" template-url="https://edu.google.com/templates/home/slide.html" style="">
+        <div class="section-wrapper green ng-scope">
+          <div class="section hero-section">
+            <div class="text section-in">
+              <p class="headline slider-headline">7 of 8 Ivy League schools</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Hero" data-g-action="Left Arrow" data-g-label="Hero"><span class="icon-prev"></span></a>
+    <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Hero" data-g-action="Right Arrow" data-g-label="Hero"><span class="icon-next"></span></a>
+</div>
+</div>  <div class="section solution">
+    <h1 class="headline">Connecting youths with mentors</h1>
+    <h3 class="subheadline">We are targeting Kenyan youths who mostly don't have access to quality mentorship.</h3>
+    <h2><a class="maia-button get-google" href="https://eduproducts.withgoogle.com/?lb=edu-registration" data-g-event="Edu: Canvas" data-g-action="Get Google Products" data-g-label="Solutions" target="_self">Get Started</a></h2>
+    <div class="maia-cols solutions-tile-container">
+      <div class="maia-col-4 solutions-tile productivity">
+        <a href="/products/productivity-tools/" data-g-event="Edu: Canvas" data-g-action="Free Productivity Tools" data-g-label="Solutions" target="_self">
+          <img class="image productivity-image" src="https://edu.google.com/images/free-productivity-tools.jpg" data-retina="306x242">
+          <p>Find Mentor Easily</p>
+          <h5>Simplify and save time with Classroom, Gmail, Docs, and more.</h5>
         </a>
-        <a class="right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
-            <span class="icon-next" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+      </div>
+      <div class="maia-col-4 solutions-tile class-content">
+        <a href="/products/productivity-tools/classroom/" data-g-event="Edu: Canvas" data-g-action="Classroom" data-g-label="Solutions" target="_self">
+          <img class="image class-content-image" src="https://edu.google.com/images/productivity-tools.jpg" data-retina="306x242">
+          <p>Mentorship Programs</p>
+          <h5>Create assignments paperlessly and stay organized.</h5>
         </a>
-        <!--/.Controls-->
+      </div>
+      <div class="maia-col-4 solutions-tile devices">
+        <a href="/products/devices/" data-g-event="Edu: Canvas" data-g-action="Devices" data-g-label="Solutions" target="_self">
+          <img class="image devices-image" src="https://edu.google.com/images/devices.jpg" data-retina="306x242">
+          <p>Change Someone's Life</p>
+          <h5>Get laptops and tablets that are affordable and easy to manage.</h5>
+        </a>
+      </div>
     </div>
-    <!--/.Carousel Wrapper-->
+  </div>
 
-    <br>
+  <div class="gray-section connect ">
+<div id="impact">
+  <h1 class="headline">Impact Portraits</h1>
+  <h3 class="subheadline">Explore findings from a 16-month investigation by Evergreen Education Group highlighting success with Chromebooks and G Suite through the lens of teachers, students and administrators.</h3>
 
-    <div class="container">
-        <center>
-        <h1>Seek out mentorship</h1>
-        <p>As the leader of a growing company, one thing that has always amazed me is the lack of enthusiasm that young employees tend to have about the concept of mentorship. I’m not sure if it’s simply a Millennial trait or something else, but I’ve never once had a team member actively seek out formal mentorship from senior members of the team.</p>
-        <a target="_blank" href="http://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-primary btn-lg">Find A Mentor</a>
-        </center>
-        <br>
-    </div>
-
-    <!--Content-->
-    <div class="container" style="border: 2px #1d95d2 solid;border-radius: 5px;">
-    <br><center>
-    <h3>MENTORS</h3></center>
-        <div class="row" >
-            <!--First columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card">
-
-                    <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(2).jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
-                        </a>
-                    </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                    <div class="card__share">
-                        <div class="card__social">  
-                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-instagram"></span></a>
-                            <a class="share-icon googleplus" href="#"><span class="fa fa-linkedin"></span></a>
-                            <a class="share-icon website" href="#"><span class="fa fa-globe"></span></a> 
-                        </div>
-                        <a id="share" class="share-toggle share-icon" href="#"></a>
-                    </div>
-                        <!--Title-->
-                        <h4 class="card-title">Mentor 001</h4>
-                        <!--Text-->
-                        <p class="card-text">Some quick bio text for our mentors, 50 or so words.</p>
-                        <a href="#" class="btn btn-primary">View Profile</a>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
+  <div class="carousel-wrap card-carousel card-carousel__impact desktop" set-ng-animate="false">
+    <div class="carousel-wrapper ng-isolate-scope" data-carousel="" data-interval="-1" data-ga="Edu: Canvas;Impact Portraits" template-url="https://edu.google.comhttps://edu.google.com/templates/home/card-carousel.html">
+  <div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel-card-container hero-section-wrapper" ng-swipe-right="prev()" ng-swipe-left="next()">
+      <div class="carousel-inner">
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope active" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/charlottemeckimpactportrait-pdf-google-drive-ncv" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Charlotte-MecklenburgSchools, US: Exceeding state growth expectations"></a>
+            <img class="card-image Charlotte-Mecklenburg<br/>Schools, US" src="https://edu.google.com/images/impact/charlottte.png" srcset="https://edu.google.com/images/impact/charlottte.png 1x, https://edu.google.com/images/impact/charlottte.png 2x">
+            <h5 class="card-title">Charlotte-Mecklenburg<br>Schools, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Exceeding state growth expectations</p>
             </div>
-            <!--First columnn-->
-
-            <!--Second columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card">
-
-                    <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(4).jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
-                        </a>
-                    </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Card title</h4>
-                        <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/devonportimpactportrait-pdf-google-drive-inx" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Devonport BoysHigh School, UK: Building new learning styles with digital tools"></a>
+            <img class="card-image Devonport Boys<br/>High School, UK" src="https://edu.google.com/images/impact/devenport.png" srcset="https://edu.google.com/images/impact/devenport.png 1x, https://edu.google.com/images/impact/devenport.png 2x">
+            <h5 class="card-title">Devonport Boys<br>High School, UK</h5>
+            <div class="card-description">
+              <p class="card-description-text">Building new learning styles with digital tools</p>
             </div>
-            <!--Second columnn-->
-
-            <!--Third columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card">
-
-                    <!--Card image-->
-                    <div class="view overlay hm-white-slight">
-                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(8).jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
-                        </a>
-                    </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Card title</h4>
-                        <!--Text-->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Read more</a>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
+          </div>
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/maine207impactportrait-pdf-google-drive-yx9" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Maine TownshipHigh School District  207, US: Sustaining high ACT scores"></a>
+            <img class="card-image Maine Township<br/>High School District  207, US" src="https://edu.google.com/images/impact/maine.png" srcset="https://edu.google.com/images/impact/maine.png 1x, https://edu.google.com/images/impact/maine.png 2x">
+            <h5 class="card-title">Maine Township<br>High School District  207, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Sustaining high ACT scores</p>
             </div>
-            <!--Third columnn-->
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/mckinnonimpactportrait-pdf-google-drive-n3e" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="McKinnonSecondary College, AU: Enabling self-directed learning"></a>
+            <img class="card-image McKinnon<br/>Secondary College, AU" src="https://edu.google.com/images/impact/mckinnon.png" srcset="https://edu.google.com/images/impact/mckinnon.png 1x, https://edu.google.com/images/impact/mckinnon.png 2x">
+            <h5 class="card-title">McKinnon<br>Secondary College, AU</h5>
+            <div class="card-description">
+              <p class="card-description-text">Enabling self-directed learning</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/stpatricksimpactportrait-pdf-google-drive-veg" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="St. Patrick’s College, NZ: Advancing collaboration and engagement"></a>
+            <img class="card-image St. Patrick’s College, NZ" src="https://edu.google.com/images/impact/st-patricks.png" srcset="https://edu.google.com/images/impact/st-patricks.png 1x, https://edu.google.com/images/impact/st-patricks.png 2x">
+            <h5 class="card-title">St. Patrick’s College, NZ</h5>
+            <div class="card-description">
+              <p class="card-description-text">Advancing collaboration and engagement</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/arcadiaimpactportrait-pdf-google-drive-sep" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Arcadia UnifiedSchool District, US: Improving quality and feedback"></a>
+            <img class="card-image Arcadia Unified<br/>School District, US" src="https://edu.google.com/images/impact/arcadia.png" srcset="https://edu.google.com/images/impact/arcadia.png 1x, https://edu.google.com/images/impact/arcadia.png 2x">
+            <h5 class="card-title">Arcadia Unified<br>School District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Improving quality and feedback</p>
+            </div>
+          </div>
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/tringimpactportrait-pdf-google-drive-ywq" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Tring School, UK: Differentiating learning for all students"></a>
+            <img class="card-image Tring School, UK" src="https://edu.google.com/images/impact/tring.png" srcset="https://edu.google.com/images/impact/tring.png 1x, https://edu.google.com/images/impact/tring.png 2x">
+            <h5 class="card-title">Tring School, UK</h5>
+            <div class="card-description">
+              <p class="card-description-text">Differentiating learning for all students</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/chagrinimpactportrait-pdf-google-drive-za4" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Chagrin Falls ExemptedVillage Schools District, US: Preparing students with advanced classes"></a>
+            <img class="card-image Chagrin Falls Exempted<br/>Village Schools District, US" src="https://edu.google.com/images/impact/chagring.png" srcset="https://edu.google.com/images/impact/chagring.png 1x, https://edu.google.com/images/impact/chagring.png 2x">
+            <h5 class="card-title">Chagrin Falls Exempted<br>Village Schools District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Preparing students with advanced classes</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/oshkoshimpactportrait-pdf-google-drive" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Oshkosh AreaSchool District, US: Increasing English class passing rates"></a>
+            <img class="card-image Oshkosh Area<br/>School District, US" src="https://edu.google.com/images/impact/oshkosh.png" srcset="https://edu.google.com/images/impact/oshkosh.png 1x, https://edu.google.com/images/impact/oshkosh.png 2x">
+            <h5 class="card-title">Oshkosh Area<br>School District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Increasing English class passing rates</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/placerunionimpactportrait-pdf-google-drive" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Placer UnionHigh School District, US: Building 21st century skills"></a>
+            <img class="card-image Placer Union<br/>High School District, US" src="https://edu.google.com/images/impact/placer.png" srcset="https://edu.google.com/images/impact/placer.png 1x, https://edu.google.com/images/impact/placer.png 2x">
+            <h5 class="card-title">Placer Union<br>High School District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Building 21st century skills</p>
+            </div>
+          </div>
         </div>
     </div>
-    <!--/.Content-->
+      <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Left Arrow" data-g-label="Impact Portraits"><span class="icon-prev"></span></a>
+      <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Right Arrow" data-g-label="Impact Portraits"><span class="icon-next"></span></a>
+  </div>
+</div>
+  </div>
 
-
-
-    <!--Footer-->
-    <footer class="page-footer center-on-small-only">
-
-        <!--Footer Links-->
-        <!-- <div class="container-fluid">
-            <div class="row">
-
-               
+  <div class="carousel-wrap card-carousel card-carousel__impact mobile" set-ng-animate="false">
+    <div class="carousel-wrapper ng-isolate-scope" data-carousel="" data-interval="-1" data-ga="Edu: Canvas;Impact Portraits" template-url="https://edu.google.com/templates/home/card-carousel.html">
+  <div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel-card-container hero-section-wrapper" ng-swipe-right="prev()" ng-swipe-left="next()">
+      <div class="carousel-inner">
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope active" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/charlottemeckimpactportrait-pdf-google-drive-ncv" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Charlotte-MecklenburgSchools, US: Exceeding state growth expectations"></a>
+            <img class="card-image Charlotte-Mecklenburg<br/>Schools, US" src="https://edu.google.com/images/impact/charlottte.png" srcset="https://edu.google.com/images/impact/charlottte.png 1x, https://edu.google.com/images/impact/charlottte.png 2x">
+            <h5 class="card-title">Charlotte-Mecklenburg<br>Schools, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Exceeding state growth expectations</p>
             </div>
-        </div> -->
-        <!--/.Footer Links-->
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/devonportimpactportrait-pdf-google-drive-inx" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Devonport BoysHigh School, UK: Building new learning styles with digital tools"></a>
+            <img class="card-image Devonport Boys<br/>High School, UK" src="https://edu.google.com/images/impact/devenport.png" srcset="https://edu.google.com/images/impact/devenport.png 1x, https://edu.google.com/images/impact/devenport.png 2x">
+            <h5 class="card-title">Devonport Boys<br>High School, UK</h5>
+            <div class="card-description">
+              <p class="card-description-text">Building new learning styles with digital tools</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/maine207impactportrait-pdf-google-drive-yx9" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Maine TownshipHigh School District  207, US: Sustaining high ACT scores"></a>
+            <img class="card-image Maine Township<br/>High School District  207, US" src="https://edu.google.com/images/impact/maine.png" srcset="https://edu.google.com/images/impact/maine.png 1x, https://edu.google.com/images/impact/maine.png 2x">
+            <h5 class="card-title">Maine Township<br>High School District  207, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Sustaining high ACT scores</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/mckinnonimpactportrait-pdf-google-drive-n3e" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="McKinnonSecondary College, AU: Enabling self-directed learning"></a>
+            <img class="card-image McKinnon<br/>Secondary College, AU" src="https://edu.google.com/images/impact/mckinnon.png" srcset="https://edu.google.com/images/impact/mckinnon.png 1x, https://edu.google.com/images/impact/mckinnon.png 2x">
+            <h5 class="card-title">McKinnon<br>Secondary College, AU</h5>
+            <div class="card-description">
+              <p class="card-description-text">Enabling self-directed learning</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/stpatricksimpactportrait-pdf-google-drive-veg" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="St. Patrick’s College, NZ: Advancing collaboration and engagement"></a>
+            <img class="card-image St. Patrick’s College, NZ" src="https://edu.google.com/images/impact/st-patricks.png" srcset="https://edu.google.com/images/impact/st-patricks.png 1x, https://edu.google.com/images/impact/st-patricks.png 2x">
+            <h5 class="card-title">St. Patrick’s College, NZ</h5>
+            <div class="card-description">
+              <p class="card-description-text">Advancing collaboration and engagement</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/arcadiaimpactportrait-pdf-google-drive-sep" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Arcadia UnifiedSchool District, US: Improving quality and feedback"></a>
+            <img class="card-image Arcadia Unified<br/>School District, US" src="https://edu.google.com/images/impact/arcadia.png" srcset="https://edu.google.com/images/impact/arcadia.png 1x, https://edu.google.com/images/impact/arcadia.png 2x">
+            <h5 class="card-title">Arcadia Unified<br>School District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Improving quality and feedback</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/tringimpactportrait-pdf-google-drive-ywq" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Tring School, UK: Differentiating learning for all students"></a>
+            <img class="card-image Tring School, UK" src="https://edu.google.com/images/impact/tring.png" srcset="https://edu.google.com/images/impact/tring.png 1x, https://edu.google.com/images/impact/tring.png 2x">
+            <h5 class="card-title">Tring School, UK</h5>
+            <div class="card-description">
+              <p class="card-description-text">Differentiating learning for all students</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/chagrinimpactportrait-pdf-google-drive-za4" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Chagrin Falls ExemptedVillage Schools District, US: Preparing students with advanced classes"></a>
+            <img class="card-image Chagrin Falls Exempted<br/>Village Schools District, US" src="https://edu.google.com/images/impact/chagring.png" srcset="https://edu.google.com/images/impact/chagring.png 1x, https://edu.google.com/images/impact/chagring.png 2x">
+            <h5 class="card-title">Chagrin Falls Exempted<br>Village Schools District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Preparing students with advanced classes</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/oshkoshimpactportrait-pdf-google-drive" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Oshkosh AreaSchool District, US: Increasing English class passing rates"></a>
+            <img class="card-image Oshkosh Area<br/>School District, US" src="https://edu.google.com/images/impact/oshkosh.png" srcset="https://edu.google.com/images/impact/oshkosh.png 1x, https://edu.google.com/images/impact/oshkosh.png 2x">
+            <h5 class="card-title">Oshkosh Area<br>School District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Increasing English class passing rates</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://www.g4w.co/placerunionimpactportrait-pdf-google-drive" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Placer UnionHigh School District, US: Building 21st century skills"></a>
+            <img class="card-image Placer Union<br/>High School District, US" src="https://edu.google.com/images/impact/placer.png" srcset="https://edu.google.com/images/impact/placer.png 1x, https://edu.google.com/images/impact/placer.png 2x">
+            <h5 class="card-title">Placer Union<br>High School District, US</h5>
+            <div class="card-description">
+              <p class="card-description-text">Building 21st century skills</p>
+            </div>
+          </div>
+        </div>
+    </div>
+      <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Left Arrow" data-g-label="Impact Portraits"><span class="icon-prev"></span></a>
+      <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Right Arrow" data-g-label="Impact Portraits"><span class="icon-next"></span></a>
+  </div>
+</div>
+  </div>
+</div>    <div class="line-break"></div>
+<div id="impact">
+  <h1 class="headline">Connect with a mentor now!</h1>
+  <h3 class="subheadline">We recognize that the best advice comes from educators like these..</h3>
 
-        <!-- <hr> -->
+  <div class="carousel-wrap card-carousel desktop" set-ng-animate="false">
+    <div class="carousel-wrapper ng-isolate-scope" data-carousel="" data-interval="-1" data-ga="Edu: Canvas;Impact Portraits" template-url="https://edu.google.com/templates/home/card-carousel.html">
+  <div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel-card-container hero-section-wrapper" ng-swipe-right="prev()" ng-swipe-left="next()">
+      <div class="carousel-inner">
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope active" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/6e8a2846e0b82e03e90493f7003d132e" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Allison Mollica: Trainer"></a>
+            <img class="card-image Allison Mollica" src="https://edu.google.com/images/connect/allison-mollica.jpg" srcset="https://edu.google.com/images/connect/allison-mollica.jpg 1x, https://edu.google.com/images/connect/allison-mollica.jpg 2x">
+            <h5 class="card-title">Allison Mollica</h5>
+            <div class="card-description">
+              <p class="card-description-text">Trainer</p>
+              <p class="card-description-text">AM Technology EDU</p>
+              <p class="card-description-text">Sunapee, NH, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/c5d4995497f9d49edc919d915976fef1" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Ann Witherspoon: Instructional Technologist"></a>
+            <img class="card-image Ann Witherspoon" src="https://edu.google.com/images/connect/ann-witherspoon.jpg" srcset="https://edu.google.com/images/connect/ann-witherspoon.jpg 1x, https://edu.google.com/images/connect/ann-witherspoon.jpg 2x">
+            <h5 class="card-title">Ann Witherspoon</h5>
+            <div class="card-description">
+              <p class="card-description-text">Instructional Technologist</p>
+              <p class="card-description-text">Midlothian ISD</p>
+              <p class="card-description-text">Midlothian, TX, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/a7fddf5e2368766afee9e39b9a982bff" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Chris Aviles: Classroom Teacher"></a>
+            <img class="card-image Chris Aviles" src="https://edu.google.com/images/connect/chris-aviles.jpg" srcset="https://edu.google.com/images/connect/chris-aviles.jpg 1x, https://edu.google.com/images/connect/chris-aviles.jpg 2x">
+            <h5 class="card-title">Chris Aviles</h5>
+            <div class="card-description">
+              <p class="card-description-text">Classroom Teacher</p>
+              <p class="card-description-text">Barnegat Township Schools</p>
+              <p class="card-description-text">Barnegat, NJ, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/f39a56ba1e900de4eec65c54f37805c0" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Chris Harte: World Languages Teacher"></a>
+            <img class="card-image Chris Harte" src="https://edu.google.com/images/connect/chris-harte.jpg" srcset="https://edu.google.com/images/connect/chris-harte.jpg 1x, https://edu.google.com/images/connect/chris-harte.jpg 2x">
+            <h5 class="card-title">Chris Harte</h5>
+            <div class="card-description">
+              <p class="card-description-text">World Languages Teacher</p>
+              <p class="card-description-text">John Monash Science School</p>
+              <p class="card-description-text">Melbourne, Victoria, Australia</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/afd7e78fca0272540ecba7dd737becbd" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Donna Teuber: Team Lead, Tech Integration"></a>
+            <img class="card-image Donna Teuber" src="https://edu.google.com/images/connect/donna-teuber.jpg" srcset="https://edu.google.com/images/connect/donna-teuber.jpg 1x, https://edu.google.com/images/connect/donna-teuber.jpg 2x">
+            <h5 class="card-title">Donna Teuber</h5>
+            <div class="card-description">
+              <p class="card-description-text">Team Lead, Tech Integration</p>
+              <p class="card-description-text">Richland School District Two</p>
+              <p class="card-description-text">Columbia, SC, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/98d1af67fdd38d59e3dae7fccf3e1869" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Henry Thiele: Assistant Superintendent"></a>
+            <img class="card-image Henry Thiele" src="https://edu.google.com/images/connect/henry-thiele.jpg" srcset="https://edu.google.com/images/connect/henry-thiele.jpg 1x, https://edu.google.com/images/connect/henry-thiele.jpg 2x">
+            <h5 class="card-title">Henry Thiele</h5>
+            <div class="card-description">
+              <p class="card-description-text">Assistant Superintendent</p>
+              <p class="card-description-text">Maine Township High School</p>
+              <p class="card-description-text">Park Ridge, IL, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/7d2c9ff6edef253aba496381531b7f82" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Jarunee Sinchairojkul: Consultant"></a>
+            <img class="card-image Jarunee Sinchairojkul" src="https://edu.google.com/images/connect/jarunee-sinchairojkul.jpg" srcset="https://edu.google.com/images/connect/jarunee-sinchairojkul.jpg 1x, https://edu.google.com/images/connect/jarunee-sinchairojkul.jpg 2x">
+            <h5 class="card-title">Jarunee Sinchairojkul</h5>
+            <div class="card-description">
+              <p class="card-description-text">Consultant</p>
+              <p class="card-description-text">CRM and Cloud Consulting</p>
+              <p class="card-description-text">Bangkok, Thailand</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/ddc0e9a65c9b89bce79c896315d11a80" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Jay Atwood: Educator"></a>
+            <img class="card-image Jay Atwood" src="https://edu.google.com/images/connect/jay-atwood.jpg" srcset="https://edu.google.com/images/connect/jay-atwood.jpg 1x, https://edu.google.com/images/connect/jay-atwood.jpg 2x">
+            <h5 class="card-title">Jay Atwood</h5>
+            <div class="card-description">
+              <p class="card-description-text">Educator</p>
+              <p class="card-description-text">Singapore American School</p>
+              <p class="card-description-text">Singapore, Singapore</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/2020d0e7e5b405184a2fa2e024b2f5d8" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Jill Duman: Education Advisor ICT"></a>
+            <img class="card-image Jill Duman" src="https://edu.google.com/images/connect/jill-duman.jpg" srcset="https://edu.google.com/images/connect/jill-duman.jpg 1x, https://edu.google.com/images/connect/jill-duman.jpg 2x">
+            <h5 class="card-title">Jill Duman</h5>
+            <div class="card-description">
+              <p class="card-description-text">Education Advisor ICT</p>
+              <p class="card-description-text">Norfolk Children's Services</p>
+              <p class="card-description-text">Norwich, Norfolk, UK</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/9294e824e5f56272be4873e113e41eb9" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Michael Hernandez: Classroom Teacher"></a>
+            <img class="card-image Michael Hernandez" src="https://edu.google.com/images/connect/michael-hernandez.jpg" srcset="https://edu.google.com/images/connect/michael-hernandez.jpg 1x, https://edu.google.com/images/connect/michael-hernandez.jpg 2x">
+            <h5 class="card-title">Michael Hernandez</h5>
+            <div class="card-description">
+              <p class="card-description-text">Classroom Teacher</p>
+              <p class="card-description-text">Mira Costa High School</p>
+              <p class="card-description-text">Manhattan Beach, CA, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/fdbce1fac48073870396d2d5777bb397" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Rachel-Wente Chaney: Chief Information Officer"></a>
+            <img class="card-image Rachel-Wente Chaney" src="https://edu.google.com/images/connect/rachel-wente-chaney.jpg" srcset="https://edu.google.com/images/connect/rachel-wente-chaney.jpg 1x, https://edu.google.com/images/connect/rachel-wente-chaney.jpg 2x">
+            <h5 class="card-title">Rachel-Wente Chaney</h5>
+            <div class="card-description">
+              <p class="card-description-text">Chief Information Officer</p>
+              <p class="card-description-text">High Desert Education Service</p>
+              <p class="card-description-text">Bend, OR, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/755b836dcd6a910af5f11416fedb779f" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Rich Kiker: Director of Online Learning"></a>
+            <img class="card-image Rich Kiker" src="https://edu.google.com/images/connect/rich-kiker.jpg" srcset="https://edu.google.com/images/connect/rich-kiker.jpg 1x, https://edu.google.com/images/connect/rich-kiker.jpg 2x">
+            <h5 class="card-title">Rich Kiker</h5>
+            <div class="card-description">
+              <p class="card-description-text">Director of Online Learning</p>
+              <p class="card-description-text">Palisades School District</p>
+              <p class="card-description-text">Philadelphia, PA, USA</p>
+            </div>
+          </div>
+        </div>
+    </div>
+      <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Left Arrow" data-g-label="Impact Portraits"><span class="icon-prev"></span></a>
+      <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Right Arrow" data-g-label="Impact Portraits"><span class="icon-next"></span></a>
+  </div>
+</div>
+  </div>
 
-        <!--Call to action-->
-        <div class="call-to-action">
-            <form>
-                <label>Subscribe</label><input type="text" name="email">
+  <div class="carousel-wrap card-carousel card-carousel__impact mobile" set-ng-animate="false">
+    <div class="carousel-wrapper ng-isolate-scope" data-carousel="" data-interval="-1" data-ga="Edu: Canvas;Impact Portraits" template-url="https://edu.google.com/templates/home/card-carousel.html">
+  <div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel-card-container hero-section-wrapper" ng-swipe-right="prev()" ng-swipe-left="next()">
+      <div class="carousel-inner">
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope active" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/6e8a2846e0b82e03e90493f7003d132e" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Allison Mollica: Trainer"></a>
+            <img class="card-image Allison Mollica" src="https://edu.google.com/images/connect/allison-mollica.jpg" srcset="https://edu.google.com/images/connect/allison-mollica.jpg 1x, https://edu.google.com/images/connect/allison-mollica.jpg 2x">
+            <h5 class="card-title">Allison Mollica</h5>
+            <div class="card-description">
+              <p class="card-description-text">Trainer</p>
+              <p class="card-description-text">AM Technology EDU</p>
+              <p class="card-description-text">Sunapee, NH, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/c5d4995497f9d49edc919d915976fef1" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Ann Witherspoon: Instructional Technologist"></a>
+            <img class="card-image Ann Witherspoon" src="https://edu.google.com/images/connect/ann-witherspoon.jpg" srcset="https://edu.google.com/images/connect/ann-witherspoon.jpg 1x, https://edu.google.com/images/connect/ann-witherspoon.jpg 2x">
+            <h5 class="card-title">Ann Witherspoon</h5>
+            <div class="card-description">
+              <p class="card-description-text">Instructional Technologist</p>
+              <p class="card-description-text">Midlothian ISD</p>
+              <p class="card-description-text">Midlothian, TX, USA</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/a7fddf5e2368766afee9e39b9a982bff" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Chris Aviles: Classroom Teacher"></a>
+            <img class="card-image Chris Aviles" src="https://edu.google.com/images/connect/chris-aviles.jpg" srcset="https://edu.google.com/images/connect/chris-aviles.jpg 1x, https://edu.google.com/images/connect/chris-aviles.jpg 2x">
+            <h5 class="card-title">Chris Aviles</h5>
+            <div class="card-description">
+              <p class="card-description-text">Classroom Teacher</p>
+              <p class="card-description-text">Barnegat Township Schools</p>
+              <p class="card-description-text">Barnegat, NJ, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/f39a56ba1e900de4eec65c54f37805c0" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Chris Harte: World Languages Teacher"></a>
+            <img class="card-image Chris Harte" src="https://edu.google.com/images/connect/chris-harte.jpg" srcset="https://edu.google.com/images/connect/chris-harte.jpg 1x, https://edu.google.com/images/connect/chris-harte.jpg 2x">
+            <h5 class="card-title">Chris Harte</h5>
+            <div class="card-description">
+              <p class="card-description-text">World Languages Teacher</p>
+              <p class="card-description-text">John Monash Science School</p>
+              <p class="card-description-text">Melbourne, Victoria, Australia</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/afd7e78fca0272540ecba7dd737becbd" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Donna Teuber: Team Lead, Tech Integration"></a>
+            <img class="card-image Donna Teuber" src="https://edu.google.com/images/connect/donna-teuber.jpg" srcset="https://edu.google.com/images/connect/donna-teuber.jpg 1x, https://edu.google.com/images/connect/donna-teuber.jpg 2x">
+            <h5 class="card-title">Donna Teuber</h5>
+            <div class="card-description">
+              <p class="card-description-text">Team Lead, Tech Integration</p>
+              <p class="card-description-text">Richland School District Two</p>
+              <p class="card-description-text">Columbia, SC, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/98d1af67fdd38d59e3dae7fccf3e1869" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Henry Thiele: Assistant Superintendent"></a>
+            <img class="card-image Henry Thiele" src="https://edu.google.com/images/connect/henry-thiele.jpg" srcset="https://edu.google.com/images/connect/henry-thiele.jpg 1x, https://edu.google.com/images/connect/henry-thiele.jpg 2x">
+            <h5 class="card-title">Henry Thiele</h5>
+            <div class="card-description">
+              <p class="card-description-text">Assistant Superintendent</p>
+              <p class="card-description-text">Maine Township High School</p>
+              <p class="card-description-text">Park Ridge, IL, USA</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/7d2c9ff6edef253aba496381531b7f82" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Jarunee Sinchairojkul: Consultant"></a>
+            <img class="card-image Jarunee Sinchairojkul" src="https://edu.google.com/images/connect/jarunee-sinchairojkul.jpg" srcset="https://edu.google.com/images/connect/jarunee-sinchairojkul.jpg 1x, https://edu.google.com/images/connect/jarunee-sinchairojkul.jpg 2x">
+            <h5 class="card-title">Jarunee Sinchairojkul</h5>
+            <div class="card-description">
+              <p class="card-description-text">Consultant</p>
+              <p class="card-description-text">CRM and Cloud Consulting</p>
+              <p class="card-description-text">Bangkok, Thailand</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/ddc0e9a65c9b89bce79c896315d11a80" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Jay Atwood: Educator"></a>
+            <img class="card-image Jay Atwood" src="https://edu.google.com/images/connect/jay-atwood.jpg" srcset="https://edu.google.com/images/connect/jay-atwood.jpg 1x, https://edu.google.com/images/connect/jay-atwood.jpg 2x">
+            <h5 class="card-title">Jay Atwood</h5>
+            <div class="card-description">
+              <p class="card-description-text">Educator</p>
+              <p class="card-description-text">Singapore American School</p>
+              <p class="card-description-text">Singapore, Singapore</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card yellow ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/2020d0e7e5b405184a2fa2e024b2f5d8" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Jill Duman: Education Advisor ICT"></a>
+            <img class="card-image Jill Duman" src="https://edu.google.com/images/connect/jill-duman.jpg" srcset="https://edu.google.com/images/connect/jill-duman.jpg 1x, https://edu.google.com/images/connect/jill-duman.jpg 2x">
+            <h5 class="card-title">Jill Duman</h5>
+            <div class="card-description">
+              <p class="card-description-text">Education Advisor ICT</p>
+              <p class="card-description-text">Norfolk Children's Services</p>
+              <p class="card-description-text">Norwich, Norfolk, UK</p>
+            </div>
+          </div>
+          <div class="carousel-card blue ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/9294e824e5f56272be4873e113e41eb9" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Michael Hernandez: Classroom Teacher"></a>
+            <img class="card-image Michael Hernandez" src="https://edu.google.com/images/connect/michael-hernandez.jpg" srcset="https://edu.google.com/images/connect/michael-hernandez.jpg 1x, https://edu.google.com/images/connect/michael-hernandez.jpg 2x">
+            <h5 class="card-title">Michael Hernandez</h5>
+            <div class="card-description">
+              <p class="card-description-text">Classroom Teacher</p>
+              <p class="card-description-text">Mira Costa High School</p>
+              <p class="card-description-text">Manhattan Beach, CA, USA</p>
+            </div>
+          </div>
+        </div>
+        <div ng-class="{
+    'active': leaving || (active &amp;&amp; !entering),
+    'prev': (next || active) &amp;&amp; direction=='prev',
+    'next': (next || active) &amp;&amp; direction=='next',
+    'right': direction=='prev',
+    'left': direction=='next'
+  }" class="item text-center ng-scope ng-isolate-scope" ng-transclude="" data-slide="">
+          <div class="carousel-card green ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/fdbce1fac48073870396d2d5777bb397" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Rachel-Wente Chaney: Chief Information Officer"></a>
+            <img class="card-image Rachel-Wente Chaney" src="https://edu.google.com/images/connect/rachel-wente-chaney.jpg" srcset="https://edu.google.com/images/connect/rachel-wente-chaney.jpg 1x, https://edu.google.com/images/connect/rachel-wente-chaney.jpg 2x">
+            <h5 class="card-title">Rachel-Wente Chaney</h5>
+            <div class="card-description">
+              <p class="card-description-text">Chief Information Officer</p>
+              <p class="card-description-text">High Desert Education Service</p>
+              <p class="card-description-text">Bend, OR, USA</p>
+            </div>
+          </div>
+          <div class="carousel-card red ng-scope">
+            <a class="card-profile-link" href="https://edudirectory.withgoogle.com/profile/755b836dcd6a910af5f11416fedb779f" target="_blank" data-g-event="Edu: Canvas" data-g-action="Case Studies: Impact Portraits" data-g-label="Rich Kiker: Director of Online Learning"></a>
+            <img class="card-image Rich Kiker" src="https://edu.google.com/images/connect/rich-kiker.jpg" srcset="https://edu.google.com/images/connect/rich-kiker.jpg 1x, https://edu.google.com/images/connect/rich-kiker.jpg 2x">
+            <h5 class="card-title">Rich Kiker</h5>
+            <div class="card-description">
+              <p class="card-description-text">Director of Online Learning</p>
+              <p class="card-description-text">Palisades School District</p>
+              <p class="card-description-text">Philadelphia, PA, USA</p>
+            </div>
+          </div>
+        </div>
+    </div>
+      <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Left Arrow" data-g-label="Impact Portraits"><span class="icon-prev"></span></a>
+      <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1" target="_self" data-g-event="Edu: Canvas" data-g-action="Right Arrow" data-g-label="Impact Portraits"><span class="icon-next"></span></a>
+  </div>
+</div>
+  </div>
+</div>    <div class="maia-aux trainer">
+      <a href="//edudirectory.withgoogle.com/" target="_blank" data-g-event="Edu: Canvas" data-g-action="Training: Hire A Trainer" data-g-label="Trainers"><button class="maia-button small-btn trainer">Find a Mentor</button></a>
+      <a href="https://edutrainingcenter.withgoogle.com/certification_trainer" target="_blank" data-g-event="Edu: Canvas" data-g-action="Training: Become A Trainer" data-g-label="Trainers"><button class="maia-button small-btn trainer">Become a Mentor</button></a>
+    </div>
+    <div class="line-break"></div>
+    <div class="social-wrapper desktop">
+       <a class="social googlepluslink" href="https://plus.google.com/+GoogleforEducation" target="_blank" data-g-event="Edu: Canvas" data-g-action="Google+" data-g-label="Social">
+       <div class="social googlepluscontent">Join our Google+ Group!
+        <h5 class="social-stat">983K</h5>
+        <div class="social arrow">◀</div>
+        </div>
+        <div class="social followers">FOLLOWERS</div>
+       </a>
+       <a class="social twitterlink" href="https://twitter.com/googleforedu" target="_blank" data-g-event="Edu: Canvas" data-g-action="Twitter" data-g-label="Social">
+        <div class="social twittercontent">Follow us on Twitter!
+        <h5 class="social-stat">59K</h5>
+        <div class="social arrow">◀</div>
+        </div>
+        <div class="social followers">FOLLOWERS</div>
+       </a>
+        <a class="social badgelink" href="/resources/communities/" data-g-event="Edu: Canvas" data-g-action="Find Other Educators" data-g-label="Social" target="_self">
+        <div class="social badgecontent">Find your local Google Educator Group.
+        <h5 class="social-stat">280</h5>
+        <div class="social arrow">◀</div>
+        </div>
+        <div class="social followers">LOCATIONS</div>
+        </a>
+    </div>
+
+    <div class="social-wrapper mobile">
+       <a class="social googlepluslink" href="https://plus.google.com/+GoogleforEducation" target="_blank" data-g-event="Edu: Canvas" data-g-action="Google+" data-g-label="Social">
+       <div class="social googlepluscontent">
+        <h5 class="social content">Join our Google+ Group!</h5>
+        <h5 class="social-stat">983K</h5>
+        <div class="social arrow">◀</div>
+        </div>
+        <div class="social followers">FOLLOWERS</div>
+       </a>
+       <a class="social twitterlink" href="https://twitter.com/googleforedu" target="_blank" data-g-event="Edu: Canvas" data-g-action="Twitter" data-g-label="Social">
+        <div class="social twittercontent">
+        <h5 class="social content">Follow us on Twitter!</h5>
+        <h5 class="social-stat">59K</h5>
+        <div class="social arrow">◀</div>
+        </div>
+        <div class="social followers">FOLLOWERS</div>
+       </a>
+      <a class="social badgelink" href="/resources/communities/" data-g-event="Edu: Canvas" data-g-action="Find Other Educators" data-g-label="Social" target="_self">
+        <div class="social badgecontent">
+        <h5 class="social content">Find your local Google Educator Group.</h5>
+        <h5 class="social-stat">280</h5>
+        <div class="social arrow">◀</div>
+        </div>
+        <div class="social followers">LOCATIONS</div>
+        </a>
+
+    </div>
+  </div>
+  <div class="section programs">
+    <h2 class="headline">Programs for mentors and mentees</h2>
+    <h3 class="subheadline">Join others who are exploring their interests,<br>and making a difference in the world.</h3>
+    <div class="turntable-container edu-turntable">
+  <div class="left-fade" ng-click="turntable.move(-1)">
+    <div class="backward-gray"></div>
+  </div>
+  <div class="right-fade" ng-click="turntable.move(1)">
+    <div class="forward-gray"></div>
+  </div>
+  <div class="homepage-program-cards" ng-swipe-left="turntable.move(1)" ng-swipe-right="turntable.move(-1)" style="left: -1590px;">
+<!-- ngIf: true --><div class="homepage-program-card card-index-0 edu-turntable-item tile ng-scope" data-link="https://edutrainingcenter.withgoogle.com/certification_innovator" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 0">
+      <div class="tile-image certified-innovator-program" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/gta.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/gta.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Certified Innovator Program
+          </div>
+          <div class="name-active">
+            Certified Innovator Program
+          </div>
+        </div>
+        <div class="description">
+          A professional development experience designed to help educators from around the globe get the most from innovative Google technologies.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-1 edu-turntable-item tile ng-scope" data-link="http://projectbloks.withgoogle.com" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 1">
+      <div class="tile-image project-bloks" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/project-bloks.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/project-bloks.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Project Bloks
+          </div>
+          <div class="name-active">
+            Project Bloks
+          </div>
+        </div>
+        <div class="description">
+          Project Bloks is a research project to create an open platform developers can use to make tangible programming experiences that teach computational thinking to kids.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-2 edu-turntable-item tile ng-scope" data-link="http://www.madewithcode.com" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 2">
+      <div class="tile-image made-with-code" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/made-with-code.png')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/made-with-code.png&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Made with Code
+          </div>
+          <div class="name-active">
+            Made with Code
+          </div>
+        </div>
+        <div class="description">
+          Coding is the new literacy - it carries the potential to create, to innovate, and quite literally change the world. This initiative is designed to inspire millions of girls to experience the power of code.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-3 edu-turntable-item tile ng-scope" data-link="/resources/programs/google-rise-awards/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 3">
+      <div class="tile-image rise-awards" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/rise.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/rise.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google RISE Awards
+          </div>
+          <div class="name-active">
+            Google RISE Awards
+          </div>
+        </div>
+        <div class="description">
+          Google RISE Awards are grants designed to promote and support extracurricular Computer Science education initiatives for K12/pre-university students around the world.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-4 edu-turntable-item tile ng-scope" data-link="http://www.googlesciencefair.com" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 4">
+      <div class="tile-image google-science-fair" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/science-fair.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/science-fair.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google Science Fair
+          </div>
+          <div class="name-active">
+            Google Science Fair
+          </div>
+        </div>
+        <div class="description">
+          The Google Science Fair is a global competition open to 13-18 olds. Students submit a project online for a chance to win amazing prizes.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-5 edu-turntable-item tile ng-scope" data-link="http://cs4hs.com/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 5">
+      <div class="tile-image computer-science-for-high-school-cs4hs" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/computer-science-for-high-school.png')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/computer-science-for-high-school.png&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Computer Science for High School (CS4HS)
+          </div>
+          <div class="name-active">
+            Computer Science for High School (CS4HS)
+          </div>
+        </div>
+        <div class="description">
+          CS4HS is an annual grant program promoting Computer Science education worldwide by connecting educators to the skills and resources they need to teach computer science &amp; computational thinking concepts in fun and relevant way.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-6 edu-turntable-item tile ng-scope" data-link="http://www.cs-first.com/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 6">
+      <div class="tile-image cs-first" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/google-cs-first.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/google-cs-first.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            CS First
+          </div>
+          <div class="name-active">
+            CS First
+          </div>
+        </div>
+        <div class="description">
+          Google after school program focused on increasing CS Education capacity of K-12 schools to improve student access and exposure to Computer Science (CS) Education.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-7 edu-turntable-item tile ng-scope" data-link="https://developers.google.com/open-source/gci/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 7">
+      <div class="tile-image google-code-in-gci" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/google-code-in.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/google-code-in.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google Code-in (GCI)
+          </div>
+          <div class="name-active">
+            Google Code-in (GCI)
+          </div>
+        </div>
+        <div class="description">
+          Pre-university students ages 13 to 17 are invited to take part in Google Code-in, our global, online contest introducing teenagers to the world of open source.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-8 edu-turntable-item tile ng-scope" data-link="https://code.google.com/codejam" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 8">
+      <div class="tile-image code-jam" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/code-jam.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/code-jam.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Code Jam
+          </div>
+          <div class="name-active">
+            Code Jam
+          </div>
+        </div>
+        <div class="description">
+          Global programming competition in which professional &amp; student programmers solve increasingly complex algorithmic problems during multiple rounds.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-9 edu-turntable-item tile ng-scope" data-link="https://developers.google.com/open-source/gsoc/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 9">
+      <div class="tile-image google-summer-of-code-gsoc" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/google-summer-of-code.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/google-summer-of-code.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google Summer of Code (GSoC)
+          </div>
+          <div class="name-active">
+            Google Summer of Code (GSoC)
+          </div>
+        </div>
+        <div class="description">
+          Google Summer of Code is a global program that offers stipends to university students for developing open source software over their summer break.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-10 edu-turntable-item tile ng-scope" data-link="http://www.google.com/doodle4google/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 10">
+      <div class="tile-image doodle-4-google" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/doodle-4-google.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/doodle-4-google.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Doodle 4 Google
+          </div>
+          <div class="name-active">
+            Doodle 4 Google
+          </div>
+        </div>
+        <div class="description">
+          Doodle 4 Google invites students to use their artistic talents to think big and redesign the Google logo for millions to see.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-11 edu-turntable-item tile ng-scope" data-link="http://www.google.com/onlinechallenge/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 11">
+      <div class="tile-image google-online-marketing-challenge" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/gomc.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/gomc.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google Online Marketing Challenge
+          </div>
+          <div class="name-active">
+            Google Online Marketing Challenge
+          </div>
+        </div>
+        <div class="description">
+          GOMC is a global competition for students, which enables them to experience and create online marketing campaigns using Google AdWords and Google+.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-12 edu-turntable-item tile ng-scope active" data-link="/resources/programs/google-student-veteran-summit/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 12">
+      <div class="tile-image google-student-veteran-summit" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/student-veterans.jpg')" style="background-image: url(&quot;https://edu.google.com/images/resources/programs/student-veterans.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google Student Veteran Summit
+          </div>
+          <div class="name-active">
+            Google Student Veteran Summit
+          </div>
+        </div>
+        <div class="description">
+          The Google Student Veteran Summit includes a professional development curriculum geared towards veterans' transitions into the workplace.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-13 edu-turntable-item tile ng-scope" data-link="/resources/programs/computer-science-summer-institute/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 13">
+      <div class="tile-image computer-science-summer-institute" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/computer-science-summer-institute.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/computer-science-summer-institute.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Computer Science Summer Institute
+          </div>
+          <div class="name-active">
+            Computer Science Summer Institute
+          </div>
+        </div>
+        <div class="description">
+          CSSI is a 3-week summer program for incoming college freshmen (current high school seniors) who are interested in studying computer science.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-14 edu-turntable-item tile ng-scope" data-link="https://cssiextension.withgoogle.com/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 14">
+      <div class="tile-image cssi-extension" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/cssi-extension.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/cssi-extension.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            CSSI-Extension
+          </div>
+          <div class="name-active">
+            CSSI-Extension
+          </div>
+        </div>
+        <div class="description">
+          Expose your university's incoming freshman to key CS concepts by running a 3-week coding program on your campus in partnership with Google.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-15 edu-turntable-item tile ng-scope" data-link="/resources/programs/bold-immersion/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 15">
+      <div class="tile-image bold-immersion" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/bold-immersion.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/bold-immersion.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            BOLD Immersion
+          </div>
+          <div class="name-active">
+            BOLD Immersion
+          </div>
+        </div>
+        <div class="description">
+          An opportunity that provides university students with a rare glimpse into the business side of the technology industry, career opportunities and valuable networks.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-16 edu-turntable-item tile ng-scope" data-link="/scholarships/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 16">
+      <div class="tile-image student-scholarships" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/student-scholarships.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/student-scholarships.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Student Scholarships
+          </div>
+          <div class="name-active">
+            Student Scholarships
+          </div>
+        </div>
+        <div class="description">
+          Google scholarships aim to inspire and help students become future leaders in computing and technology by breaking down the barriers that prevent them from entering these fields.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-17 edu-turntable-item tile ng-scope" data-link="https://careers.google.com/students/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 17">
+      <div class="tile-image google-jobs-and-internships-for-students" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/jobs-internships-for-students.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/jobs-internships-for-students.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google Jobs and Internships for Students
+          </div>
+          <div class="name-active">
+            Google Jobs and Internships for Students
+          </div>
+        </div>
+        <div class="description">
+          We’re changing the way billions of users access information, conduct business and connect with each other. Join us and do cool things that matter.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-18 edu-turntable-item tile ng-scope" data-link="http://google.org/global-impact-awards/#tab=awardee-tab-education" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 18">
+      <div class="tile-image googleorg" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/google-org.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/google-org.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google.org
+          </div>
+          <div class="name-active">
+            Google.org
+          </div>
+        </div>
+        <div class="description">
+          Google.org invests millions of dollars annually in organizations that make computer science programs more inclusive, such as Girls Who Code, Code2040, and Code.org.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-19 edu-turntable-item tile ng-scope" data-link="/resources/programs/exploring-computational-thinking/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 19">
+      <div class="tile-image computational-thinking" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/computational-thinking.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/computational-thinking.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Computational Thinking
+          </div>
+          <div class="name-active">
+            Computational Thinking
+          </div>
+        </div>
+        <div class="description">
+          Computational thinking (CT) involves a set of problem-solving skills and techniques that software engineers use to write programs that underlie the computer applications you use such as search, email, and maps
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-20 edu-turntable-item tile ng-scope" data-link="https://hashcode.withgoogle.com" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 20">
+      <div class="tile-image hash-code" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/hashcode2016.png')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/hashcode2016.png&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Hash Code
+          </div>
+          <div class="name-active">
+            Hash Code
+          </div>
+        </div>
+        <div class="description">
+          Hash Code is a team-based programming competition organized by Google. You pick your team and programming language, we pick a real-life engineering problem to solve. Are you up for the challenge?
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-21 edu-turntable-item tile ng-scope" data-link="http://www.google.com/policyfellowship/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 21">
+      <div class="tile-image google-policy-fellowship" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/policy-fellowship.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/policy-fellowship.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google Policy Fellowship
+          </div>
+          <div class="name-active">
+            Google Policy Fellowship
+          </div>
+        </div>
+        <div class="description">
+          This program offers students the opportunity to spend the summer working on Internet and technology policy issues at public interest organizations
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-22 edu-turntable-item tile ng-scope" data-link="/resources/programs/adcamp/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 22">
+      <div class="tile-image adcamp" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/ad-camp.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/ad-camp.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            AdCamp
+          </div>
+          <div class="name-active">
+            AdCamp
+          </div>
+        </div>
+        <div class="description">
+          A 3-day summer program for current university students interested in pursuing a career in advertising sales or marketing.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+<!-- ngIf: true --><div class="homepage-program-card card-index-23 edu-turntable-item tile ng-scope" data-link="/resources/programs/google-apac-mba-summit/" ng-class="turntable.classesForIndex(cardIndex)" ng-click="turntable.setIndex(cardIndex);" ng-if="true" ng-init="cardIndex = 23">
+      <div class="tile-image google-apac-mba-summit" ng-style="turntable.stylesForImageIndex(cardIndex,'https://edu.google.com/images/resources/programs/japanese-mba-summit.jpg')" style="filter: grayscale(100%); background-image: url(&quot;https://edu.google.com/images/resources/programs/japanese-mba-summit.jpg&quot;);"></div>
+      <div class="details">
+        <div class="name">
+          <div class="name-inactive">
+            Google APAC MBA Summit
+          </div>
+          <div class="name-active">
+            Google APAC MBA Summit
+          </div>
+        </div>
+        <div class="description">
+          Up to 100 MBA students who seeks opportunities in APAC countries will be sent to the summit at Google’s Mountain View office in this September.
+        </div>
+      </div>
+    </div><!-- end ngIf: true -->
+  </div>
+</div>
+    <a href="/resources/programs/" data-g-event="Edu: Canvas" data-g-action="See All Programs" data-g-label="Programs" target="_self">
+      <button class="maia-button small-btn programs">See All Programs</button>
+    </a>
+  </div>
+
+  <div class="gray-section goog-for-edu">
+    <div class="video">
+      <div class="geg-overlay">
+        <h2 class="headline">Metorship 101<br><span class="geg">(in 101 Seconds)</span></h2>
+        <a class="maia-media ng-isolate-scope lb-homepage" data-lightbox="lb-homepage" href="https://www.youtube.com/embed/0BFQbCVtI2k?autohide=1&amp;amp;cc_load_policy=0&amp;amp;hl=en&amp;amp;cc_lang_pref=en&amp;amp;autoplay=1" data-lightbox-width="700" data-lightbox-height="394" data-g-event="Edu: Canvas" data-g-action="Video: 101 Seconds" data-g-label="101" data-lightbox-index="0" target="_self">
+          <img src="https://edu.google.com/images/play-btn_2x.png" height="62" width="62">
+      </a>
+      </div>
+    </div>
+    <div id="newsletter"></div>
+  </div>
+</div>
+    <div class="blue-section-wrapper ng-scope" data-ng-controller="OverlayController as overlayCtrl">
+    <!-- "directive" -->
+    <div class="page-overlay ng-hide" ng-hide="overlayCtrl.pageOverlayHidden"></div>
+    <div class="overlay how-to-get-overlay thank-you-sign-up ng-hide" ng-show="overlayCtrl.pageOverlayHidden === false &amp;&amp; overlayCtrl.signUpShow === true">
+      <div class="how-to-get return-overlay" ng-click="overlayCtrl.removeOverlay();"></div>
+      <h2 class="headline">Thanks for signing up!</h2>
+      <div class="thank-you-section">
+        <p>Thanks for signing up!</p>
+        <img class="envelope-image" src="https://edu.google.com/images/envelope.png">
+      </div>
+    </div>
+
+  <!-- END directive -->
+<div class="blue-section">
+    <h2 class="headline white">Want updates about Mentor 001?</h2>
+    <p class="subheadline white">Sign up to receive motivational emails and updates about new mentorship opprtunities.</p>
+
+    <div class="mailing-whole">
+
+      <div class="mailing-half-wrap">
+        <div data-ng-controller="SignupController as signupCtrl" class="ng-scope">
+          <form action="https://lp.google-mkto.com/index.php/leadCapture/save" enctype="application/x-www-form-urlencoded" id="mktForm_3180" method="POST" ng-submit="signupCtrl.submit(form, $event)" class="ng-pristine ng-valid-email ng-invalid ng-invalid-required">
+            <input id="input_email" type="email" name="Email" ng-model="signupCtrl.email" tabindex="1" required="" placeholder="Enter your email address" class="ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required">
+            <button tabindex="-1" id="email-submit" type="submit" class="maia-button gray">Sign Up</button>
+            <span ng-show="signupCtrl.invalid" class="error ng-hide">Please enter a valid email address.</span>
+<input id="partner-opt-in" name="Opt_In_Partner__c" type="hidden" value="False" autocomplete="off">
+<input name="LeadSource" type="hidden" value="Website" autocomplete="off">
+<input id="utm_campaign__c" name="utm_campaign__c" type="hidden" value="organic" autocomplete="off">
+<input id="utm_source__c" name="utm_source__c" type="hidden" value="google" autocomplete="off">
+<input id="utm_medium" name="utm_medium" type="hidden" value="organic" autocomplete="off">
+<input id="utm_term" name="utm_term" type="hidden" value="" autocomplete="off">
+<input id="utm_content" name="utm_content" type="hidden" value="" autocomplete="off">
+<input id="00N60000001fchv" name="OSO_Test_Tracking__c" type="hidden" value="" autocomplete="off">
+<input name="formid" type="hidden" value="3180" autocomplete="off">
+<input name="subId" type="hidden" value="95" autocomplete="off">
+<input name="munchkinId" type="hidden" value="248-TPC-286" autocomplete="off">
+<input name="retURL" type="hidden" value="https://edu.google.com/#signup-thankyou" autocomplete="off">
+          </form>
+        </div>
+      </div>
+
+</div>
+  </div>
+</div>
+  </div>
+  <div id="maia-signature"></div>
+  <div class="maia-footer" id="maia-footer">
+  <div id="maia-footer-local">
+    <div class="maia-aux">
+      <div class="ent-footer-links">
+        <div class="ent-footer-unit products-group first">
+          <div class="ent-footer-unit-break-wrapper">
+            <h4 class="section-header"><span class="product-name-desktop">Products</span><span class="arrow-icon">&nbsp;</span></h4>
+            <ul>
+                  <li><a href="/products/devices/" target="_self">Devices</a></li>
+                  <li><a href="/products/productivity-tools/" target="_self">Productivity Tools</a></li>
+                  <li><a href="/products/productivity-tools/classroom/" target="_self">Classroom</a></li>
+                  <li><a href="/expeditions/" target="_self">Expeditions</a></li>
+                  <li><a href="/products/more-products/" target="_self">More Products</a></li>
+                  <li><a href="/products/cloud-platform/" target="_self">Google Cloud Platform</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ent-footer-unit training-group ">
+          <div class="ent-footer-unit-break-wrapper">
+            <h4 class="section-header"><span class="product-name-desktop">Training</span><span class="arrow-icon">&nbsp;</span></h4>
+            <ul>
+                  <li><a href="/training/" target="_self">Training Overview</a></li>
+                  <li><a href="https://edutrainingcenter.withgoogle.com" target="_self">For Educators</a></li>
+                  <li><a href="https://edutrainingcenter.withgoogle.com/certification_trainer" target="_self">For Trainers</a></li>
+                  <li><a href="http://certification.googleapps.com/admin" target="_self">For IT Admins</a></li>
+                  <li><a href="https://edudirectory.withgoogle.com" target="_self">Directory of Partners</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ent-footer-unit resources-group ">
+          <div class="ent-footer-unit-break-wrapper">
+            <h4 class="section-header"><span class="product-name-desktop">Resources</span><span class="arrow-icon">&nbsp;</span></h4>
+            <ul>
+                  <li><a href="/resources/news-and-events/" target="_self">News &amp; Events</a></li>
+                  <li><a href="/resources/communities/" target="_self">Communities</a></li>
+                  <li><a href="/resources/programs/" target="_self">Programs</a></li>
+                  <li><a href="/resources/computerscience/" target="_self">Computer Science Education</a></li>
+                  <li><a href="/resources/global-education/" target="_self">Global Education</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ent-footer-unit guides-group ">
+          <div class="ent-footer-unit-break-wrapper">
+            <h4 class="section-header"><span class="product-name-desktop">Guides</span><span class="arrow-icon">&nbsp;</span></h4>
+            <ul>
+                  <li><a href="/it/" target="_self">IT</a></li>
+                  <li><a href="https://developers.google.com/edu/" target="_self">Developer Resources</a></li>
+                  <li><a href="/trust/" target="_self">Privacy &amp; Security</a></li>
+                  <li><a href="/access/" target="_self">Access</a></li>
+                  <li><a href="/pdfs/guide/branding-guide-schools-going-google.pdf" target="_self">Branding Guide for Schools</a></li>
+                  <li><a href="/pdfs/guide/professional-development-handbook.pdf" target="_self">PD Handbook</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ent-footer-unit contact-group ">
+          <div class="ent-footer-unit-break-wrapper">
+            <h4 class="section-header"><span class="product-name-desktop">Contact</span><span class="arrow-icon">&nbsp;</span></h4>
+            <ul>
+                  <li><a href="/contact/" target="_self">Sales</a></li>
+                  <li><a href="https://support.google.com/edu/?hl=en" target="_self">Support</a></li>
+                  <li><a href="/partners/" target="_self">Partner Program</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ent-footer-unit stories-group last">
+          <div class="ent-footer-unit-break-wrapper">
+            <h4 class="section-header"><span class="product-name-desktop">Stories</span><span class="arrow-icon">&nbsp;</span></h4>
+            <ul>
+                  <li><a href="/case-studies/" target="_self">Case Studies</a></li>
+                  <li><a href="https://www.google.com/chrome/education/devices/casestudies.html#casestudy-astoria" target="_self">See Chromebooks Schools</a></li>
+                  <li><a href="https://blog.google/topics/education/" target="_self">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="maia-cols search-social">
+        <div class="maia-col-5 footer-top">
+          <div class="search">
+            <form class="maia-search ng-pristine ng-valid" id="global-search-form">
+              <input name="q" placeholder="Search this site" type="text" id="global-search-term" autocomplete="off">
+              <div id="global-search-suggest"></div>
+              <button class="maia-button blue" id="global-search-submit" onclick="return false;">
+              <span class="maia-search-icon">Search</span>
+              </button>
             </form>
+          </div>
         </div>
-        <!--/.Call to action-->
 
-        <!--Copyright-->
-        <div class="footer-copyright">
-            <div class="container-fluid">
-                © 2017<a href="http://www.MDBootstrap.com"> Mentor 001 </a>
-
-            </div>
+        <div class="maia-col-4 social">
+          <span class="follow">
+            <a href="https://plus.google.com/103266364845729488839" rel="publisher" class="gplus" target="_blank" data-g-event="Edu: Canvas" data-g-action="Google+" data-g-label="Social">
+              <img alt="Google+" src="https://edu.google.com/images/plus.png" data-retina="34x30"></a>
+            <a href="https://twitter.com/googleforedu" target="_blank" data-g-event="Edu: Canvas" data-g-action="Twitter" data-g-label="Social">
+              <img alt="Twitter" src="https://edu.google.com/images/twitter.png" data-retina="38x31"></a>
+            <a href="https://www.youtube.com/user/eduatgoogle" class="youtube" target="_blank" data-g-event="Edu: Canvas" data-g-action="Youtube" data-g-label="Social">
+              <img alt="YouTube" src="https://edu.google.com/images/youtube.png" data-retina="61x25"></a>
+            <a href="https://blog.google/topics/education/" target="_blank" data-g-event="Edu: Canvas" data-g-action="Blogger" data-g-label="Social">
+              <img alt="Blogger" src="https://edu.google.com/images/blogger.png" data-retina="33x32"></a>
+          </span>
         </div>
-        <!--/.Copyright-->
+      </div>
 
-    </footer>
-    <!--/.Footer-->
+</div>
+</div>  
+</div>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-cookies.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-animate.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-touch.js"></script>
+  <script id="app-script" src="js/all.min.js"></script><iframe frameborder="0" src="about:blank" class="gweb-lightbox-bg" style="border: 0px; vertical-align: bottom; display: none; opacity: 0;"></iframe><div class="gweb-lightbox-bg" style="display: none; opacity: 0.8;"></div><div class="gweb-lightbox gweb-lightbox-outside-nav" tabindex="0" role="dialog" aria-labelledby=":0" id="gweb-lightbox-lb-homepage" style="display: none; left: 18px; top: 2178.5px;"><div class="gweb-lightbox-title gweb-lightbox-title-draggable"><span class="gweb-lightbox-title-text" id=":0" role="heading"></span><span class="gweb-lightbox-title-close" role="button" tabindex="0" aria-label="Close">×</span></div><div class="gweb-lightbox-content"><iframe frameborder="0" src="about:blank" id="gweb-lightbox-lb-homepage-iframe" name="gweb-lightbox-lb-homepage-iframe" style="border: 0px; vertical-align: bottom;"></iframe></div><div class="gweb-lightbox-buttons" style=""><div class="gweb-lightbox-caption gweb-lightbox-hide"></div><a class="gweb-lightbox-nav gweb-lightbox-prev" href="#" style="display: none;"><span>‹</span><img src="//www.google.com/images/cleardot.gif" alt=""></a><a class="gweb-lightbox-nav gweb-lightbox-next" href="#" style="display: none;"><span>›</span><img src="//www.google.com/images/cleardot.gif" alt=""></a></div></div><span tabindex="0" style="display: none; position: absolute; left: 18px; top: 2178.5px;"></span><iframe frameborder="0" src="about:blank" class="gweb-lightbox-bg" style="border: 0px; vertical-align: bottom; display: none; opacity: 0;"></iframe><div class="gweb-lightbox-bg" style="display: none; opacity: 0.8;"></div><div class="gweb-lightbox" tabindex="0" role="dialog" aria-labelledby=":1" id="gweb-lightbox-lb" style="display: none; left: 18px; top: 2219px;"><div class="gweb-lightbox-title gweb-lightbox-title-draggable"><span class="gweb-lightbox-title-text" id=":1" role="heading"></span><span class="gweb-lightbox-title-close" role="button" tabindex="0" aria-label="Close">×</span></div><div class="gweb-lightbox-content"></div><div class="gweb-lightbox-buttons"><div class="gweb-lightbox-caption gweb-lightbox-hide"></div></div></div><span tabindex="0" style="display: none; position: absolute; left: 18px; top: 2219px;"></span>
 
-
-    <!-- SCRIPTS -->
-
-    <!-- JQuery -->
-    <script type="text/javascript">
-        $(document).ready(function($) {
-
-    $('.card__share > a').on('click', function(e){ 
-        e.preventDefault() // prevent default action - hash doesn't appear in url
-        $(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
-        $(this).toggleClass('share-expanded');
-    });
-  
-});
-    </script>
-
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="./js/tether.min.js"></script>
-
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="./js/mdb.min.js"></script>
-
-    <!-- Include Angular-->
-    <script type="text/javascript" src="./libs/angular/angular.js"></script>
-
-    <!-- Include Angular Routes-->
-    <script type="text/javascript" src="./libs/angular-route/angular-route.js"></script>
-
-
-    <!-- Angular Routes -->
-    <script type="text/javascript" src="./js/appRoutes.js"></script>
-
-    <!-- Main Controller-->
-    <script type="text/javascript" src="./js/MainCtrl.js"></script>
-
-    <!-- Mentor Controller-->
-    <script type="text/javascript" src="./js/MentorCtrl.js"></script>
-
-    <!-- Mentor Service  JavaScript -->
-    <script type="text/javascript" src="./js/MentorService.js"></script>
-
-    <!-- Angular App Init-->
-    <script type="text/javascript" src="./js/app.js"></script>
-    
-
-
-</body>
-
-</html>
+<div id="contain-402"></div><script src="//survey.g.doubleclick.net/gk/prompt?t=a&amp;site=g52lkw2al3rfg7wyb77ykui2ru&amp;random=1487715875652&amp;ref"></script></body></html>
